@@ -1,8 +1,20 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SEOVALT
 
-## Getting Started
+**WordPress SEO on autopilot, powered by AI.**
 
-First, run the development server:
+## Quick Start
+
+```bash
+npm install && cp .env.example .env.local && npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) — redirects to `/en`.
+
+## Stack: Next.js 16 · TypeScript · Tailwind v4 · Supabase · Stripe · next-intl · Framer Motion
+
+See [docs/SETUP.md](./docs/SETUP.md) for full setup and [docs/API.md](./docs/API.md) for the WordPress plugin API.
+
+## Legacy quickstart:
 
 ```bash
 npm run dev

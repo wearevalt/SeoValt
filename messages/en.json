@@ -1,0 +1,398 @@
+{
+  "meta": {
+    "siteName": "SEOVALT",
+    "home": {
+      "title": "SEOVALT — WordPress SEO on Autopilot",
+      "description": "SEOVALT automatically fixes SEO issues, generates AI-powered blog articles, monitors Core Web Vitals, and sends weekly reports. Set it up once, let it run forever."
+    },
+    "pricing": {
+      "title": "Pricing — SEOVALT",
+      "description": "Simple, transparent pricing for every WordPress site. Start free, scale as you grow."
+    },
+    "features": {
+      "title": "Features — SEOVALT",
+      "description": "Every SEO tool your WordPress site needs, powered by AI."
+    },
+    "login": {
+      "title": "Sign in — SEOVALT",
+      "description": "Sign in to your SEOVALT account to manage your licenses and usage."
+    },
+    "signup": {
+      "title": "Get started free — SEOVALT",
+      "description": "Create your free SEOVALT account and put your WordPress SEO on autopilot."
+    }
+  },
+  "nav": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "docs": "Docs",
+    "changelog": "Changelog",
+    "login": "Sign in",
+    "cta": "Get Started Free",
+    "dashboard": "Dashboard"
+  },
+  "hero": {
+    "badge": "WordPress SEO Autopilot",
+    "title": "Your SEO on",
+    "titleHighlight": "autopilot",
+    "subtitle": "Install the plugin once. SEOVALT handles the rest — AI articles, SEO fixes, PageSpeed monitoring, and weekly reports.",
+    "cta": "Start Free",
+    "ctaSecondary": "Watch Demo",
+    "stat1Value": "12,000+",
+    "stat1Label": "articles generated",
+    "stat2Value": "99%",
+    "stat2Label": "SEO score",
+    "stat3Value": "500+",
+    "stat3Label": "sites running"
+  },
+  "trust": {
+    "label": "Trusted by 1,000+ WordPress sites worldwide"
+  },
+  "features": {
+    "badge": "Everything you need",
+    "title": "SEO that works while you sleep",
+    "subtitle": "Six powerful tools, one WordPress plugin. No configuration needed.",
+    "items": {
+      "articles": {
+        "title": "AI Article Generation",
+        "description": "Automatically generate SEO-optimized blog posts tailored to your niche and keyword strategy. Fully on autopilot."
+      },
+      "scanner": {
+        "title": "Smart SEO Scanner",
+        "description": "Full-site audit covering H1 tags, meta descriptions, titles, slug quality, keyword density, and more."
+      },
+      "vitals": {
+        "title": "Core Web Vitals",
+        "description": "Monitor LCP, INP, and CLS via Google PageSpeed Insights. Get actionable recommendations instantly."
+      },
+      "images": {
+        "title": "Image Optimization",
+        "description": "Bulk-generate AI alt texts for every image in your media library. One click, entire site covered."
+      },
+      "competitors": {
+        "title": "Competitor Analysis",
+        "description": "Analyze competitor rankings and automatically feed your keyword pool with high-opportunity terms."
+      },
+      "meta": {
+        "title": "Meta Tags Autopilot",
+        "description": "Inject titles, descriptions, canonical URLs, and Schema.org markup — even without Yoast or RankMath."
+      }
+    }
+  },
+  "howItWorks": {
+    "badge": "3 steps",
+    "title": "From install to autopilot in minutes",
+    "steps": {
+      "install": {
+        "title": "Install the plugin",
+        "description": "Download the SEOVALT .zip and upload it to your WordPress site from the Plugins page."
+      },
+      "license": {
+        "title": "Add your license key",
+        "description": "Paste your license key in the plugin settings. Your API access is activated instantly."
+      },
+      "autopilot": {
+        "title": "SEO runs on autopilot",
+        "description": "SEOVALT starts scanning, fixing, and generating content. You get a weekly SEO report by email."
+      }
+    }
+  },
+  "dashboardPreview": {
+    "badge": "Dashboard",
+    "title": "Everything in one place",
+    "subtitle": "Monitor your SEO performance, manage licenses, and track usage from a clean, modern dashboard.",
+    "tabs": {
+      "overview": "Overview",
+      "licenses": "Licenses",
+      "usage": "Usage"
+    }
+  },
+  "pricing": {
+    "badge": "Simple pricing",
+    "title": "Start free. Scale when you need to.",
+    "subtitle": "No hidden fees. Cancel anytime. Yearly plans save 20%.",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "yearlySave": "Save 20%",
+    "popular": "Most Popular",
+    "per_month": "/month",
+    "per_year": "/year",
+    "cta_free": "Get Started Free",
+    "cta_pro": "Start with Pro",
+    "cta_agency": "Go Agency",
+    "billed_yearly": "billed yearly",
+    "plans": {
+      "free": {
+        "name": "Free",
+        "tagline": "For solo bloggers getting started",
+        "features": [
+          "5 AI articles / month",
+          "10 SEO fixes / month",
+          "5 PageSpeed checks / month",
+          "1 WordPress site",
+          "Weekly SEO report",
+          "Community support"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "tagline": "For serious WordPress creators",
+        "features": [
+          "50 AI articles / month",
+          "Unlimited SEO fixes",
+          "100 PageSpeed checks / month",
+          "3 WordPress sites",
+          "Priority email support",
+          "Competitor analysis",
+          "Bulk image ALT text",
+          "Schema.org injection"
+        ]
+      },
+      "agency": {
+        "name": "Agency",
+        "tagline": "For agencies managing multiple clients",
+        "features": [
+          "Unlimited AI articles",
+          "Unlimited SEO fixes",
+          "Unlimited PageSpeed checks",
+          "10 WordPress sites",
+          "Dedicated support",
+          "White-label reports",
+          "API access",
+          "Custom keyword pools"
+        ]
+      }
+    }
+  },
+  "testimonials": {
+    "badge": "Testimonials",
+    "title": "Loved by WordPress creators",
+    "items": [
+      {
+        "quote": "SEOVALT tripled my organic traffic in 3 months. The AI articles are indistinguishable from my own writing — but they show up on Google.",
+        "name": "Sarah Mitchell",
+        "role": "Content Creator",
+        "company": "TechBlogPro",
+        "avatar": "sarah"
+      },
+      {
+        "quote": "I manage 8 client sites. SEOVALT Agency pays for itself after fixing SEO issues on the first site alone. The time savings are insane.",
+        "name": "Marc Dubois",
+        "role": "SEO Agency Owner",
+        "company": "Visiblio",
+        "avatar": "marc"
+      },
+      {
+        "quote": "The Safe Mode is brilliant. I was terrified of an AI touching my carefully designed site. It only touches SEO, nothing else.",
+        "name": "Elena Kowalski",
+        "role": "E-commerce Owner",
+        "company": "NaturalGoods.pl",
+        "avatar": "elena"
+      }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "title": "Everything you need to know",
+    "items": [
+      {
+        "q": "What is SEOVALT?",
+        "a": "SEOVALT is a WordPress plugin that puts your SEO on autopilot. It uses AI (powered by Claude) to generate blog articles, fix SEO issues, monitor Core Web Vitals, and send you weekly performance reports — all without you lifting a finger."
+      },
+      {
+        "q": "How does the AI article generation work?",
+        "a": "You define your niche and target keywords in the plugin settings. SEOVALT uses Claude AI to generate fully SEO-optimized articles with proper title, meta description, headings, alt texts, and schema markup. Articles are published as drafts for your review, or automatically if you enable full autopilot."
+      },
+      {
+        "q": "Do I need Yoast SEO or RankMath?",
+        "a": "No. SEOVALT works independently and can inject meta tags, canonical URLs, Open Graph tags, and Schema.org markup directly. If you already use Yoast or RankMath, SEOVALT detects them and works alongside them without conflicts."
+      },
+      {
+        "q": "Is there a free plan?",
+        "a": "Yes! The Free plan gives you 5 AI articles, 10 SEO fixes, and 5 PageSpeed checks per month for 1 WordPress site. No credit card required."
+      },
+      {
+        "q": "How do I install the plugin?",
+        "a": "Download the SEOVALT .zip from your dashboard, then go to WordPress Admin → Plugins → Add New → Upload Plugin. After activation, paste your license key in the SEOVALT settings page."
+      },
+      {
+        "q": "Can I use it on multiple sites?",
+        "a": "Yes. The Pro plan supports 3 sites and the Agency plan supports 10 sites. Each site gets its own license key generated from your dashboard."
+      },
+      {
+        "q": "What happens if I exceed my monthly quota?",
+        "a": "SEOVALT will notify you when you're approaching your limit. Once reached, the affected features pause until the next month or until you upgrade. Your site won't break — existing content and fixes remain in place."
+      },
+      {
+        "q": "Is my data secure?",
+        "a": "Your API keys are never stored in the plugin — all AI calls go through our secure backend. Your WordPress credentials are never sent to our servers. The plugin communicates only via your license key."
+      },
+      {
+        "q": "Can I cancel anytime?",
+        "a": "Absolutely. Cancel your subscription anytime from your dashboard → Billing. You'll keep access until the end of your billing period. No cancellation fees."
+      },
+      {
+        "q": "Do you offer refunds?",
+        "a": "We offer a 7-day money-back guarantee on all paid plans. If SEOVALT doesn't work for you, email us within 7 days of your first payment and we'll refund you in full, no questions asked."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Stop fixing SEO manually.",
+    "titleHighlight": "Let SEOVALT handle it.",
+    "subtitle": "Join 1,000+ WordPress sites running on SEO autopilot. Start free in under 2 minutes.",
+    "button": "Start Free Today",
+    "buttonSecondary": "View Pricing"
+  },
+  "footer": {
+    "tagline": "WordPress SEO on autopilot, powered by AI.",
+    "product": "Product",
+    "company": "Company",
+    "resources": "Resources",
+    "legal": "Legal",
+    "links": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "changelog": "Changelog",
+      "roadmap": "Roadmap",
+      "about": "About",
+      "blog": "Blog",
+      "careers": "Careers",
+      "contact": "Contact",
+      "docs": "Documentation",
+      "api": "API Reference",
+      "status": "Status",
+      "support": "Support",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "cookies": "Cookie Policy",
+      "gdpr": "GDPR"
+    },
+    "copyright": "© 2026 SEOVALT. All rights reserved."
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome back",
+      "subtitle": "Sign in to your SEOVALT account",
+      "email": "Email address",
+      "emailPlaceholder": "you@example.com",
+      "magicLink": "Send magic link",
+      "divider": "or continue with",
+      "google": "Continue with Google",
+      "noAccount": "Don't have an account?",
+      "signupLink": "Sign up free"
+    },
+    "signup": {
+      "title": "Start for free",
+      "subtitle": "Create your SEOVALT account — no credit card required",
+      "name": "Full name",
+      "namePlaceholder": "Your name",
+      "email": "Email address",
+      "emailPlaceholder": "you@example.com",
+      "cta": "Create free account",
+      "divider": "or sign up with",
+      "google": "Continue with Google",
+      "hasAccount": "Already have an account?",
+      "loginLink": "Sign in",
+      "terms": "By creating an account you agree to our",
+      "termsLink": "Terms of Service",
+      "and": "and",
+      "privacyLink": "Privacy Policy"
+    },
+    "magicLinkSent": {
+      "title": "Check your inbox",
+      "description": "We sent a magic link to {email}. Click it to sign in — no password needed.",
+      "back": "Use a different email"
+    }
+  },
+  "dashboard": {
+    "sidebar": {
+      "overview": "Overview",
+      "licenses": "Licenses",
+      "usage": "Usage",
+      "billing": "Billing",
+      "settings": "Settings",
+      "docs": "Documentation",
+      "collapse": "Collapse sidebar"
+    },
+    "overview": {
+      "welcome": "Welcome back",
+      "plan": "plan",
+      "articles": "Articles this month",
+      "seoFixes": "SEO fixes",
+      "pagespeed": "PageSpeed checks",
+      "credits": "Credits remaining",
+      "recentActivity": "Recent Activity",
+      "noActivity": "No activity yet",
+      "noActivityDesc": "Your plugin actions will appear here once you start using SEOVALT.",
+      "usageTitle": "Usage this month",
+      "viewAll": "View all"
+    },
+    "licenses": {
+      "title": "Licenses",
+      "subtitle": "Manage your WordPress plugin license keys",
+      "addLicense": "New License",
+      "downloadPlugin": "Download Plugin",
+      "key": "License Key",
+      "site": "Site URL",
+      "status": "Status",
+      "lastUsed": "Last Used",
+      "active": "Active",
+      "inactive": "Inactive",
+      "copy": "Copy",
+      "copied": "Copied!",
+      "reveal": "Click to reveal",
+      "neverUsed": "Never",
+      "empty": "No licenses yet",
+      "emptyDesc": "Generate your first license key to start using SEOVALT on your WordPress site."
+    },
+    "usage": {
+      "title": "Usage Analytics",
+      "subtitle": "Detailed breakdown of your API usage",
+      "export": "Export CSV",
+      "filter": "Filter",
+      "allActions": "All actions",
+      "articles": "Article generation",
+      "seoFixes": "SEO fixes",
+      "pagespeed": "PageSpeed checks",
+      "images": "Image optimization",
+      "scans": "Site scans",
+      "competitors": "Competitor analysis",
+      "noData": "No usage data yet"
+    },
+    "billing": {
+      "title": "Billing",
+      "subtitle": "Manage your subscription and payment details",
+      "currentPlan": "Current Plan",
+      "upgrade": "Upgrade Plan",
+      "manage": "Manage Subscription",
+      "paymentHistory": "Payment History",
+      "date": "Date",
+      "amount": "Amount",
+      "status": "Status",
+      "invoice": "Invoice",
+      "paid": "Paid",
+      "failed": "Failed",
+      "noPayments": "No payment history yet"
+    },
+    "settings": {
+      "title": "Settings",
+      "profile": "Profile",
+      "notifications": "Notifications",
+      "language": "Language",
+      "danger": "Danger Zone",
+      "name": "Full Name",
+      "email": "Email",
+      "avatar": "Avatar",
+      "save": "Save Changes",
+      "saved": "Saved!",
+      "weeklyReport": "Weekly SEO report",
+      "weeklyReportDesc": "Receive a weekly email with your SEO performance summary",
+      "quotaAlerts": "Quota alerts",
+      "quotaAlertsDesc": "Get notified when you're approaching your monthly limits",
+      "deleteAccount": "Delete Account",
+      "deleteAccountDesc": "Permanently delete your account and all associated data. This cannot be undone.",
+      "deleteConfirm": "Delete my account"
+    }
+  }
+}
