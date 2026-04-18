@@ -347,7 +347,7 @@
     "items": [
       {
         "q": "C'est quoi SEOVALT ?",
-        "a": "SEOVALT est un plugin WordPress qui met votre SEO en pilote automatique. Il utilise l'IA (propulsé par Claude) pour générer des articles, corriger les problèmes SEO, surveiller les Core Web Vitals et vous envoyer des rapports hebdomadaires — sans que vous ayez à faire quoi que ce soit."
+        "a": "SEOVALT est une plateforme de visibilité IA pour WordPress. Elle détecte toutes vos erreurs SEO, les corrige automatiquement, optimise vos pages pour être cité par ChatGPT et Perplexity, et génère du contenu qui ranke — le tout depuis votre WordPress, sans compétences techniques."
       },
       {
         "q": "Comment fonctionne la génération d'articles IA ?",
