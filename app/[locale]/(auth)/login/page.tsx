@@ -18,6 +18,7 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
   const [gLoading, setGLoading] = useState(false);
+  const [googleEnabled, setGoogleEnabled] = useState(true);
   const [cooldown, setCooldown] = useState(0);
 
   useEffect(() => {
@@ -25,6 +26,38 @@ export default function LoginPage() {
     const timer = window.setTimeout(() => setCooldown((prev) => Math.max(0, prev - 1)), 1000);
     return () => window.clearTimeout(timer);
   }, [cooldown]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const checkGoogleProvider = async () => {
+      try {
+        const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+        const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+        if (!supabaseUrl || !anonKey) return;
+
+        const res = await fetch(`${supabaseUrl}/auth/v1/settings`, {
+          headers: { apikey: anonKey },
+        });
+        if (!res.ok) return;
+
+        const data = (await res.json()) as {
+          external?: { google?: boolean };
+        };
+
+        if (!cancelled) {
+          setGoogleEnabled(Boolean(data?.external?.google));
+        }
+      } catch {
+        // Keep button enabled on transient network failures.
+      }
+    };
+
+    checkGoogleProvider();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const getAuthCallbackUrl = () => {
     const configured = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "");
@@ -66,6 +99,11 @@ export default function LoginPage() {
   };
 
   const handleGoogle = async () => {
+    if (!googleEnabled) {
+      toast.error("Google sign-in is currently disabled on this project.");
+      return;
+    }
+
     setGLoading(true);
     try {
       const supabase = createClient();
@@ -116,12 +154,12 @@ export default function LoginPage() {
       {/* Google */}
       <button
         onClick={handleGoogle}
-        disabled={gLoading}
+        disabled={gLoading || !googleEnabled}
         className={cn(
           "w-full flex items-center justify-center gap-3 px-4 py-2.5 rounded-xl text-sm font-semibold",
           "border border-border-b bg-surface-2 text-text",
           "hover:border-border-b hover:bg-surface transition-all duration-200",
-          gLoading && "opacity-50 cursor-not-allowed"
+          (gLoading || !googleEnabled) && "opacity-50 cursor-not-allowed"
         )}
       >
         {gLoading ? (
@@ -136,6 +174,11 @@ export default function LoginPage() {
         )}
         {t("google")}
       </button>
+      {!googleEnabled && (
+        <p className="mt-2 text-center text-xs text-subtle">
+          Google sign-in is not enabled yet. Use magic link for now.
+        </p>
+      )}
 
       <div className="flex items-center gap-3 my-5">
         <div className="flex-1 h-px bg-border" />
