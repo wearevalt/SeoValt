@@ -49,54 +49,54 @@
     "label": "Plus de 1 000 sites WordPress dans 30+ pays nous font confiance"
   },
   "positioning": {
-    "badge": "Positionnement clé",
-    "title": "Pourquoi choisir SEOVALT pour votre WordPress ?",
-    "subtitle": "Une extension simple qui corrige votre site, crée du contenu optimisé et prépare votre présence pour les moteurs classiques et l’intelligence artificielle.",
+    "badge": "Pourquoi SEOVALT",
+    "title": "Pendant que vous lisez ceci, vos concurrents volent vos clients.",
+    "subtitle": "Chaque jour sans SEOVALT, votre site perd des positions sur Google et des citations dans les IA. On règle ça — automatiquement.",
     "items": [
-      { "title": "SEO prêt à l’emploi", "description": "Analyse et corrections automatiques pour titres, metas, H1, slugs et images." },
-      { "title": "Contenu IA performant", "description": "Générez des articles optimisés en un clic, prêts à être publiés ou revus." },
-      { "title": "Visibilité AEO", "description": "Optimisez chaque page pour les featured snippets et les résultats AI." },
-      { "title": "Présence vocale", "description": "Réponses courtes, ton naturel et schema Speakable pour Siri, Alexa et Google." },
-      { "title": "Citations par IA", "description": "Mesurez votre potentiel de citation sur ChatGPT, Perplexity et Gemini." },
-      { "title": "Rapports simples", "description": "Recevez des alertes et un résumé hebdomadaire sans rien configurer." }
+      { "title": "Détecte tout", "description": "101 types d'erreurs SEO scannées en temps réel. Vous voyez exactement ce qui vous empêche d'être trouvé." },
+      { "title": "Optimisé pour l'IA", "description": "GEO, AEO, Entity SEO. Soyez cité par ChatGPT, Perplexity et les AI Overviews de Google — pas seulement ranké." },
+      { "title": "Répare automatiquement", "description": "L'Autopilot IA corrige vos erreurs en arrière-plan. Aucune compétence technique requise." },
+      { "title": "Analysez vos concurrents", "description": "Scannez n'importe quel site concurrent. Voyez leurs failles SEO. Exploitez-les avant eux." },
+      { "title": "Contenu IA qui ranke", "description": "Générez des articles optimisés SEO en un clic — titres, métas, liens internes, tout inclus." },
+      { "title": "Rapports clairs", "description": "Un résumé hebdomadaire de vos gains SEO. Vous savez exactement ce qui s'améliore." }
     ]
   },
   "features": {
-    "badge": "Ce que SEOVALT fait pour vous",
-    "title": "SEO + AEO + GEO en pilote automatique",
-    "subtitle": "Une suite WordPress qui combine contenu IA, corrections automatiques et visibilité sur les moteurs IA.",
-    "items": {
-      "articles": {
-        "title": "Des articles IA qui rankent vraiment",
-        "description": "Générez des articles optimisés SEO en un clic : titres, métas, H2/H3, liens internes et textes ALT — tout rédigé par l'IA."
-      },
-      "scanner": {
-        "title": "Corrigez chaque problème SEO automatiquement",
-        "description": "Audit complet en secondes — H1 manquants, méta vides, slugs cassés, alt images, sitemap. Corrigez tout en un clic."
-      },
-      "geo": {
-        "title": "Soyez cité par ChatGPT et Perplexity",
-        "description": "Mesurez la probabilité que les IA citent votre contenu. Gérez votre llms.txt et suivez votre présence dans Gemini et ChatGPT."
-      },
-      "aeo": {
-        "title": "Gagnez les featured snippets",
-        "description": "Optimisez vos pages pour l'Answer Engine Optimization et faites-vous remarquer dans les AI Overviews de Google."
-      },
-      "voice": {
-        "title": "Optimisé pour la recherche vocale",
-        "description": "Réponses courtes, ton conversationnel, schema Speakable. Quand Siri ou Alexa pose une question, c'est votre site qui répond."
-      },
-      "questions": {
-        "title": "Trouvez les questions que cherchent les gens",
-        "description": "Tapez un mot-clé, obtenez 100+ questions réelles depuis Google et YouTube. Génèrez un article depuis n'importe quelle question en un clic."
-      },
-      "entity": {
-        "title": "Injection automatique de Schema.org",
-        "description": "SEOVALT détecte organisations, produits, personnes et lieux et injecte le bon JSON-LD pour que Google et l'IA comprennent vos entités."
-      },
-      "pagespeed": {
-        "title": "Core Web Vitals en autopilot",
-        "description": "Surveillez LCP, INP et CLS via Google PageSpeed. Recevez des recommandations actionnables et suivez votre score dans le temps."
+  "badge": "Ce que SEOVALT fait pour vous",
+  "title": "Pas un plugin. Une arme de visibilité.",
+  "subtitle": "SEOVALT combine SEO classique, optimisation IA et automatisation — pour que vous soyez trouvé partout où vos clients cherchent.",
+  "items": {
+    "articles": {
+      "title": "Contenu IA qui ranke vraiment",
+      "description": "Générez des articles entièrement optimisés en un clic : titres, métas, H2/H3, liens internes et textes ALT — rédigés et publiés par l'IA."
+    },
+    "scanner": {
+      "title": "Zéro erreur SEO sur votre site",
+      "description": "Audit complet en secondes — H1 manquants, métas vides, slugs cassés, images sans ALT. Corrigez tout en un clic ou laissez l'Autopilot faire."
+    },
+    "geo": {
+      "title": "Soyez cité par ChatGPT et Perplexity",
+      "description": "Mesurez la probabilité que les IA citent votre contenu. Gérez votre llms.txt et suivez votre présence dans Gemini, ChatGPT et Perplexity."
+    },
+    "aeo": {
+      "title": "Dominez les AI Overviews de Google",
+      "description": "Optimisez vos pages pour l'Answer Engine Optimization. Apparaissez en tête des résultats IA avant vos concurrents."
+    },
+    "voice": {
+      "title": "Optimisé pour la recherche vocale",
+      "description": "Réponses courtes, ton conversationnel, schema Speakable. Quand Siri ou Alexa pose une question — c'est votre site qui répond."
+    },
+    "questions": {
+      "title": "Les questions que cherchent vos clients",
+      "description": "Tapez un mot-clé, obtenez 100+ questions réelles depuis Google et YouTube. Générez un article depuis n'importe quelle question en un clic."
+    },
+    "entity": {
+      "title": "Schema.org injecté automatiquement",
+      "description": "SEOVALT détecte vos organisations, produits et personnes — et injecte le bon JSON-LD pour que Google et les IA comprennent exactement qui vous êtes."
+    },
+    "pagespeed": {
+      "title": "Core Web Vitals en autopilot",
+      "description": "Surveillez LCP, INP et CLS via Google PageSpeed. Recevez des recommandations actionnables et suivez votre score dans le temps."
       }
     }
   },
@@ -388,11 +388,11 @@
     ]
   },
   "cta": {
-    "title": "Arrêtez d'optimiser pour le search d'hier.",
-    "titleHighlight": "Commencez à ranker partout.",
-    "subtitle": "Google. ChatGPT. Perplexity. Alexa. SEOVALT vous rend visible sur tous.",
-    "button": "Commencer gratuitement",
-    "buttonSecondary": "Voir les tarifs"
+  "title": "Chaque jour sans SEOVALT est un jour offert à vos concurrents.",
+  "titleHighlight": "Scannez votre site maintenant.",
+  "subtitle": "Gratuit. Aucune carte bancaire. Résultats en 60 secondes.",
+  "button": "Scanner mon site gratuitement",
+  "buttonSecondary": "Voir les tarifs"
   },
   "footer": {
     "tagline": "SEOVALT: SEO 2026 pour WordPress, de l'audit a l'autopilot.",
