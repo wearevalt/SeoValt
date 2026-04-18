@@ -9,6 +9,7 @@ import { Pricing } from "@/components/marketing/pricing";
 import { Testimonials } from "@/components/marketing/testimonials";
 import { FAQ } from "@/components/marketing/faq";
 import { FinalCTA } from "@/components/marketing/final-cta";
+import ScannerWidget from '@/components/ScannerWidget';
 
 export async function generateMetadata(
   props: { params: Promise<{ locale: string }> }
