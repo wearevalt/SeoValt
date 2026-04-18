@@ -52,58 +52,68 @@ export default async function AdminLicensesPage({
     redirect(`/${locale}/dashboard`);
   }
 
-  const admin = createAdminClient();
-  let query = admin
-    .from("licenses")
-    .select(`
-      id,
-      user_id,
-      license_key,
-      site_url,
-      plan,
-      is_active,
-      activated_at,
-      last_used_at,
-      created_at,
-      expires_at,
-      admin_notes,
-      users(email, full_name)
-    `)
-    .order("created_at", { ascending: false })
-    .limit(500);
+  let serverError = "";
+  let licenses: AdminLicense[] = [];
 
-  if (status === "active") query = query.eq("is_active", true);
-  if (status === "inactive") query = query.eq("is_active", false);
-  if (plan === "free" || plan === "pro" || plan === "agency") {
-    query = query.eq("plan", plan);
+  try {
+    const admin = createAdminClient();
+    let query = admin
+      .from("licenses")
+      .select(`
+        id,
+        user_id,
+        license_key,
+        site_url,
+        plan,
+        is_active,
+        activated_at,
+        last_used_at,
+        created_at,
+        expires_at,
+        admin_notes,
+        users(email, full_name)
+      `)
+      .order("created_at", { ascending: false })
+      .limit(500);
+
+    if (status === "active") query = query.eq("is_active", true);
+    if (status === "inactive") query = query.eq("is_active", false);
+    if (plan === "free" || plan === "pro" || plan === "agency") {
+      query = query.eq("plan", plan);
+    }
+
+    const { data, error } = await query;
+    if (error) {
+      throw new Error(error.message);
+    }
+
+    licenses = (data ?? []).map((row) => {
+      const base = row as Record<string, unknown>;
+      const { userEmail, userName } = getUserMeta(base.users);
+      return {
+        id: String(base.id ?? ""),
+        userId: String(base.user_id ?? ""),
+        licenseKey: String(base.license_key ?? ""),
+        siteUrl: typeof base.site_url === "string" ? base.site_url : null,
+        plan: String(base.plan ?? "free"),
+        isActive: Boolean(base.is_active),
+        activatedAt: typeof base.activated_at === "string" ? base.activated_at : null,
+        lastUsedAt: typeof base.last_used_at === "string" ? base.last_used_at : null,
+        createdAt: String(base.created_at ?? ""),
+        expiresAt: typeof base.expires_at === "string" ? base.expires_at : null,
+        adminNotes: typeof base.admin_notes === "string" ? base.admin_notes : "",
+        userEmail,
+        userName,
+      };
+    });
+  } catch (err: unknown) {
+    serverError =
+      err instanceof Error
+        ? err.message
+        : "Failed to load admin licenses data";
   }
 
-  const { data, error } = await query;
-  if (error) {
-    throw new Error(error.message);
-  }
-
-  let licenses: AdminLicense[] = (data ?? []).map((row) => {
-    const base = row as Record<string, unknown>;
-    const { userEmail, userName } = getUserMeta(base.users);
-    return {
-      id: String(base.id ?? ""),
-      userId: String(base.user_id ?? ""),
-      licenseKey: String(base.license_key ?? ""),
-      siteUrl: typeof base.site_url === "string" ? base.site_url : null,
-      plan: String(base.plan ?? "free"),
-      isActive: Boolean(base.is_active),
-      activatedAt: typeof base.activated_at === "string" ? base.activated_at : null,
-      lastUsedAt: typeof base.last_used_at === "string" ? base.last_used_at : null,
-      createdAt: String(base.created_at ?? ""),
-      expiresAt: typeof base.expires_at === "string" ? base.expires_at : null,
-      adminNotes: typeof base.admin_notes === "string" ? base.admin_notes : "",
-      userEmail,
-      userName,
-    };
-  });
-
-  if (q) {
+  if (!serverError && q) {
     const needle = normalizeText(q);
     licenses = licenses.filter((license) => {
       return (
@@ -120,6 +130,7 @@ export default async function AdminLicensesPage({
       initialLicenses={licenses}
       initialFilters={{ q, status, plan }}
       adminEmail={user.email ?? ""}
+      serverError={serverError}
     />
   );
 }

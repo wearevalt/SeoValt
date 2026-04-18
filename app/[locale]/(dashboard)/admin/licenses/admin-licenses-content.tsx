@@ -59,10 +59,12 @@ export function AdminLicensesContent({
   initialLicenses,
   initialFilters,
   adminEmail,
+  serverError,
 }: {
   initialLicenses: AdminLicense[];
   initialFilters: { q: string; status: string; plan: string };
   adminEmail: string;
+  serverError?: string;
 }) {
   const [licenses, setLicenses] = useState<AdminLicense[]>(initialLicenses);
   const [savingMap, setSavingMap] = useState<Record<string, boolean>>({});
@@ -200,6 +202,11 @@ export function AdminLicensesContent({
       </form>
 
       <div className="space-y-3">
+        {serverError && (
+          <div className="rounded-xl border border-red-400/30 bg-red-500/10 p-4 text-sm text-red-200">
+            Failed to load admin data: {serverError}
+          </div>
+        )}
         {licenses.length === 0 && (
           <div className="rounded-xl border border-border bg-surface p-6 text-sm text-muted">
             No licenses found for these filters.
