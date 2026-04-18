@@ -42,7 +42,7 @@ export function FAQ() {
 
             <a
               href="mailto:support@wearevalt.co"
-              className="mt-8 inline-flex items-center gap-2 rounded-full px-6 py-3 text-base font-semibold text-white shadow-[0_12px_30px_rgba(236,72,153,0.35)] bg-gradient-to-r from-pink-500 to-fuchsia-500 hover:from-pink-400 hover:to-fuchsia-400 transition-all"
+              className="mt-8 inline-flex items-center gap-2 rounded-full px-6 py-3 text-base font-semibold text-background shadow-[0_12px_30px_rgba(16,185,129,0.35)] bg-gradient-to-r from-emerald to-cyan hover:brightness-110 transition-all"
             >
               <Mail className="w-5 h-5" />
               {contactLabel}
@@ -59,7 +59,7 @@ export function FAQ() {
                 className={cn(
                   "rounded-2xl border transition-all duration-200 overflow-hidden shadow-[0_8px_28px_rgba(2,12,37,0.08)]",
                   open === i
-                    ? "border-pink-400/40 bg-surface"
+                    ? "border-emerald/40 bg-surface"
                     : "border-border bg-surface hover:border-border-b"
                 )}
               >
@@ -76,7 +76,7 @@ export function FAQ() {
                   </span>
                   <ChevronDown
                     className={cn(
-                      "ml-4 flex-shrink-0 w-5 h-5 text-pink-500 transition-transform duration-200",
+                      "ml-4 flex-shrink-0 w-5 h-5 text-emerald transition-transform duration-200",
                       open === i ? "rotate-180" : "rotate-0"
                     )}
                   />

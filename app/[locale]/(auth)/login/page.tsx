@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import { Mail, ArrowRight, Loader2 } from "lucide-react";
@@ -9,6 +9,7 @@ import { createClient } from "@/lib/supabase/client";
 import { toast } from "sonner";
 
 const FALLBACK_APP_URL = "https://seo-valt.vercel.app";
+const MAGIC_LINK_COOLDOWN_SECONDS = 60;
 
 export default function LoginPage() {
   const t = useTranslations("auth.login");
@@ -17,6 +18,13 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
   const [gLoading, setGLoading] = useState(false);
+  const [cooldown, setCooldown] = useState(0);
+
+  useEffect(() => {
+    if (cooldown <= 0) return;
+    const timer = window.setTimeout(() => setCooldown((prev) => Math.max(0, prev - 1)), 1000);
+    return () => window.clearTimeout(timer);
+  }, [cooldown]);
 
   const getAuthCallbackUrl = () => {
     const configured = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "");
@@ -29,6 +37,10 @@ export default function LoginPage() {
 
   const handleMagicLink = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (cooldown > 0) {
+      toast.error(`Please wait ${cooldown}s before requesting another email.`);
+      return;
+    }
     if (!email.trim()) return;
     setLoading(true);
     try {
@@ -38,9 +50,16 @@ export default function LoginPage() {
         options: { emailRedirectTo: getAuthCallbackUrl() },
       });
       if (error) throw error;
+      setCooldown(MAGIC_LINK_COOLDOWN_SECONDS);
       setSent(true);
     } catch (err: unknown) {
-      toast.error(err instanceof Error ? err.message : "Something went wrong");
+      const message = err instanceof Error ? err.message : "Something went wrong";
+      if (message.toLowerCase().includes("rate limit")) {
+        setCooldown(MAGIC_LINK_COOLDOWN_SECONDS);
+        toast.error(`Email rate limit reached. Please wait ${MAGIC_LINK_COOLDOWN_SECONDS}s and try again.`);
+      } else {
+        toast.error(message);
+      }
     } finally {
       setLoading(false);
     }
@@ -80,6 +99,11 @@ export default function LoginPage() {
         >
           Use a different email
         </button>
+        {cooldown > 0 && (
+          <p className="mt-3 text-xs text-subtle">
+            You can request a new link in {cooldown}s.
+          </p>
+        )}
       </div>
     );
   }
@@ -140,16 +164,18 @@ export default function LoginPage() {
         </div>
         <button
           type="submit"
-          disabled={loading}
+          disabled={loading || cooldown > 0}
           className={cn(
             "w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold",
             "bg-emerald text-background",
             "hover:bg-emerald-br transition-all duration-200 glow-em-sm",
-            loading && "opacity-70 cursor-not-allowed"
+            (loading || cooldown > 0) && "opacity-70 cursor-not-allowed"
           )}
         >
           {loading ? (
             <Loader2 className="w-4 h-4 animate-spin" />
+          ) : cooldown > 0 ? (
+            <>Retry in {cooldown}s</>
           ) : (
             <>
               {t("magicLink")}
@@ -157,6 +183,11 @@ export default function LoginPage() {
             </>
           )}
         </button>
+        {cooldown > 0 && (
+          <p className="text-xs text-subtle text-center">
+            For security, wait a moment before requesting another email.
+          </p>
+        )}
       </form>
 
       <p className="mt-5 text-center text-xs text-muted">
