@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import { Mail, ArrowRight, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -10,10 +10,20 @@ import { toast } from "sonner";
 
 export default function LoginPage() {
   const t = useTranslations("auth.login");
+  const locale = useLocale();
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
   const [gLoading, setGLoading] = useState(false);
+
+  const getAuthCallbackUrl = () => {
+    const configured = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "");
+    const origin =
+      configured ||
+      (typeof window !== "undefined" ? window.location.origin : "");
+    const next = encodeURIComponent(`/${locale}/dashboard`);
+    return `${origin}/${locale}/auth/callback?next=${next}`;
+  };
 
   const handleMagicLink = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,7 +33,7 @@ export default function LoginPage() {
       const supabase = createClient();
       const { error } = await supabase.auth.signInWithOtp({
         email,
-        options: { emailRedirectTo: `${window.location.origin}/dashboard` },
+        options: { emailRedirectTo: getAuthCallbackUrl() },
       });
       if (error) throw error;
       setSent(true);
@@ -38,10 +48,11 @@ export default function LoginPage() {
     setGLoading(true);
     try {
       const supabase = createClient();
-      await supabase.auth.signInWithOAuth({
+      const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
-        options: { redirectTo: `${window.location.origin}/dashboard` },
+        options: { redirectTo: getAuthCallbackUrl() },
       });
+      if (error) throw error;
     } catch {
       toast.error("Failed to connect with Google");
       setGLoading(false);
