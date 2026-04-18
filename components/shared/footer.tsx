@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import { X, ExternalLink } from "lucide-react";
 import { Logo } from "./logo";
@@ -8,6 +8,8 @@ import { LanguageSwitcher } from "./language-switcher";
 
 export function Footer() {
   const t = useTranslations("footer");
+  const locale = useLocale();
+  const base = `/${locale}`;
 
   const sections = [
     {
@@ -31,19 +33,19 @@ export function Footer() {
     {
       title: t("resources"),
       links: [
-        { label: t("links.docs"), href: "/docs" },
-        { label: t("links.api"), href: "/docs/api" },
-        { label: t("links.status"), href: "https://status.seovalt.io" },
-        { label: t("links.support"), href: "/support" },
+        { label: t("links.docs"), href: `${base}/documentation` },
+        { label: t("links.api"), href: `${base}/api-reference` },
+        { label: t("links.status"), href: `${base}/status` },
+        { label: t("links.support"), href: `${base}/support` },
       ],
     },
     {
       title: t("legal"),
       links: [
-        { label: t("links.privacy"), href: "/legal/privacy" },
-        { label: t("links.terms"), href: "/legal/terms" },
-        { label: t("links.cookies"), href: "/legal/cookies" },
-        { label: t("links.gdpr"), href: "/legal/gdpr" },
+        { label: t("links.privacy"), href: `${base}/legal/privacy` },
+        { label: t("links.terms"), href: `${base}/legal/terms` },
+        { label: t("links.cookies"), href: `${base}/legal/cookies` },
+        { label: t("links.gdpr"), href: `${base}/legal/gdpr` },
       ],
     },
   ];

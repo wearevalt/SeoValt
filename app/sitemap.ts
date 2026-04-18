@@ -2,7 +2,27 @@ import type { MetadataRoute } from "next";
 
 const BASE_URL = "https://seovalt.io";
 const LOCALES = ["en", "fr", "es"];
-const ROUTES = ["", "/pricing", "/features", "/changelog"];
+const ROUTES = [
+  "",
+  "/about",
+  "/blog",
+  "/careers",
+  "/contact",
+  "/pricing",
+  "/features",
+  "/changelog",
+  "/roadmap",
+  "/documentation",
+  "/api-reference",
+  "/status",
+  "/support",
+  "/resources",
+  "/legal",
+  "/legal/privacy",
+  "/legal/terms",
+  "/legal/cookies",
+  "/legal/gdpr",
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];

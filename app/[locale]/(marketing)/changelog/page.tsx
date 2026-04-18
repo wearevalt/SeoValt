@@ -2,6 +2,18 @@ import { GradientOrbs } from "@/components/shared/gradient-orbs";
 
 const CHANGELOG = [
   {
+    version: "3.0.1",
+    date: "April 2026",
+    tag: "Update",
+    tagColor: "emerald",
+    changes: [
+      "Added new company pages: About, Blog, Careers, and Contact",
+      "Published SEO 2026 roadmap guide with step-by-step setup",
+      "Added direct links for Anthropic, Google PageSpeed, and Search Console",
+      "Updated sitemap with new public marketing routes",
+    ],
+  },
+  {
     version: "1.2.0",
     date: "April 2026",
     tag: "New",

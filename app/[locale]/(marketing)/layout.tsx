@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/shared/navbar";
 import { Footer } from "@/components/shared/footer";
+import { FloatingActions } from "@/components/shared/floating-actions";
 
 export default function MarketingLayout({
   children,
@@ -11,6 +12,7 @@ export default function MarketingLayout({
       <Navbar />
       <main>{children}</main>
       <Footer />
+      <FloatingActions />
     </>
   );
 }

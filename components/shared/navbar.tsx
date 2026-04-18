@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -11,6 +11,8 @@ import { LanguageSwitcher } from "./language-switcher";
 
 export function Navbar() {
   const t = useTranslations("nav");
+  const locale = useLocale();
+  const base = `/${locale}`;
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -23,7 +25,8 @@ export function Navbar() {
   const navLinks = [
     { href: "#features", label: t("features") },
     { href: "#pricing", label: t("pricing") },
-    { href: "/docs", label: t("docs") },
+    { href: `${base}/documentation`, label: t("docs") },
+    { href: `${base}/status`, label: t("status") },
   ];
 
   return (
