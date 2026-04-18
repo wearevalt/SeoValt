@@ -23,6 +23,7 @@ export default function HomePage() {
   return (
     <div className="space-y-28">
       <Hero />
+      <ScannerWidget />
       <Positioning />
       <TrustBar />
       <Features />
