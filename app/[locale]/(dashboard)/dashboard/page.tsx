@@ -1,5 +1,4 @@
 import { createClient } from "@/lib/supabase/server";
-import { getTranslations } from "next-intl/server";
 import { redirect } from "next/navigation";
 import { OverviewContent } from "./overview-content";
 
@@ -8,8 +7,7 @@ export default async function DashboardPage() {
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) redirect("/login");
 
-  // Fetch user profile + quotas
-  const [{ data: profile }, { data: quotas }] = await Promise.all([
+  const [{ data: profile }, { data: quotas }, { count: activeSiteCount }] = await Promise.all([
     supabase.from("users").select("*").eq("id", user.id).single(),
     supabase
       .from("monthly_quotas")
@@ -17,6 +15,11 @@ export default async function DashboardPage() {
       .eq("user_id", user.id)
       .eq("month", new Date().toISOString().slice(0, 7) + "-01")
       .single(),
+    supabase
+      .from("licenses")
+      .select("id", { head: true, count: "exact" })
+      .eq("user_id", user.id)
+      .eq("is_active", true),
   ]);
 
   // Fetch recent activity
@@ -33,6 +36,7 @@ export default async function DashboardPage() {
       profile={profile}
       quotas={quotas}
       activity={activity ?? []}
+      siteCount={activeSiteCount ?? 0}
     />
   );
 }

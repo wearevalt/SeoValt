@@ -2,15 +2,47 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import {
-  LayoutDashboard, Key, BarChart3, CreditCard,
-  Settings, BookOpen, ChevronLeft, ChevronRight, LogOut, Zap,
+  LayoutDashboard,
+  Key,
+  BarChart3,
+  CreditCard,
+  Settings,
+  BookOpen,
+  ChevronLeft,
+  ChevronRight,
+  LogOut,
+  Zap,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { createClient } from "@/lib/supabase/client";
-import { useRouter } from "next/navigation";
+
+function normalizePath(path: string): string {
+  if (path.length > 1 && path.endsWith("/")) {
+    return path.slice(0, -1);
+  }
+  return path;
+}
+
+function isActiveRoute(pathname: string, href: string): boolean {
+  const normalizedPath = normalizePath(pathname);
+  const normalizedHref = normalizePath(href);
+
+  if (normalizedHref === "/dashboard") {
+    return (
+      normalizedPath === normalizedHref ||
+      normalizedPath.endsWith(normalizedHref)
+    );
+  }
+
+  return (
+    normalizedPath === normalizedHref ||
+    normalizedPath.endsWith(normalizedHref) ||
+    normalizedPath.includes(`${normalizedHref}/`)
+  );
+}
 
 export function Sidebar() {
   const t = useTranslations("dashboard.sidebar");
@@ -18,11 +50,14 @@ export function Sidebar() {
   const [collapsed, setCollapsed] = useState(false);
   const router = useRouter();
 
-  const navItems = [
+  const primaryNavItems = [
     { icon: LayoutDashboard, label: t("overview"),  href: "/dashboard" },
     { icon: Key,             label: t("licenses"),  href: "/dashboard/licenses" },
     { icon: BarChart3,       label: t("usage"),     href: "/dashboard/usage" },
     { icon: CreditCard,      label: t("billing"),   href: "/dashboard/billing" },
+  ];
+
+  const secondaryNavItems = [
     { icon: Settings,        label: t("settings"),  href: "/dashboard/settings" },
     { icon: BookOpen,        label: t("docs"),       href: "/docs", external: true },
   ];
@@ -36,32 +71,54 @@ export function Sidebar() {
   return (
     <aside
       className={cn(
-        "flex-shrink-0 flex flex-col border-r border-border bg-surface transition-all duration-300",
-        collapsed ? "w-16" : "w-56"
+        "flex h-full flex-shrink-0 flex-col border-r border-border bg-background/35 transition-all duration-300",
+        collapsed ? "w-16" : "w-52"
       )}
     >
-      {/* Logo */}
-      <div className="h-16 flex items-center px-4 border-b border-border">
+      <div className="flex h-16 items-center border-b border-border px-4">
         {!collapsed ? (
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-md bg-emerald-dim flex items-center justify-center">
-              <Zap className="w-3.5 h-3.5 text-emerald" />
+          <div className="flex items-center gap-2.5">
+            <div className="flex h-6 w-6 items-center justify-center rounded-md bg-emerald-dim">
+              <Zap className="h-3.5 w-3.5 text-emerald" />
             </div>
-            <span className="text-sm font-black text-text">
+            <span className="text-xs font-black text-text">
               SEO<span className="text-emerald">VALT</span>
             </span>
           </div>
         ) : (
-          <div className="w-6 h-6 rounded-md bg-emerald-dim flex items-center justify-center mx-auto">
-            <Zap className="w-3.5 h-3.5 text-emerald" />
+          <div className="mx-auto flex h-6 w-6 items-center justify-center rounded-md bg-emerald-dim">
+            <Zap className="h-3.5 w-3.5 text-emerald" />
           </div>
         )}
       </div>
 
-      {/* Nav */}
-      <nav className="flex-1 py-3 space-y-0.5 px-2">
-        {navItems.map(({ icon: Icon, label, href, external }) => {
-          const isActive = pathname === href || pathname.startsWith(href + "/");
+      <nav className="flex-1 space-y-0.5 px-2 py-3">
+        {primaryNavItems.map(({ icon: Icon, label, href }) => {
+          const isActive = isActiveRoute(pathname, href);
+          return (
+            <Link
+              key={href}
+              href={href}
+              title={collapsed ? label : undefined}
+              className={cn(
+                "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition-all duration-150",
+                isActive
+                  ? "border border-emerald/20 bg-emerald-dim text-emerald"
+                  : "text-muted hover:bg-surface-2 hover:text-text"
+              )}
+            >
+              <Icon className="h-4 w-4 flex-shrink-0" />
+              {!collapsed && <span className="truncate">{label}</span>}
+            </Link>
+          );
+        })}
+
+        {!collapsed && (
+          <div className="mx-2 my-2 border-t border-border pt-2" />
+        )}
+
+        {secondaryNavItems.map(({ icon: Icon, label, href, external }) => {
+          const isActive = isActiveRoute(pathname, href);
           return (
             <Link
               key={href}
@@ -69,41 +126,38 @@ export function Sidebar() {
               target={external ? "_blank" : undefined}
               title={collapsed ? label : undefined}
               className={cn(
-                "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-all duration-150",
+                "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition-all duration-150",
                 isActive
-                  ? "bg-emerald-dim text-emerald font-semibold"
-                  : "text-muted hover:text-text hover:bg-surface-2"
+                  ? "border border-emerald/20 bg-emerald-dim text-emerald"
+                  : "text-muted hover:bg-surface-2 hover:text-text"
               )}
             >
-              <Icon className="w-4 h-4 flex-shrink-0" />
+              <Icon className="h-4 w-4 flex-shrink-0" />
               {!collapsed && <span className="truncate">{label}</span>}
             </Link>
           );
         })}
       </nav>
 
-      {/* Bottom */}
-      <div className="pb-3 px-2 space-y-1 border-t border-border pt-3">
-        {/* Sign out */}
+      <div className="space-y-1 border-t border-border px-2 pb-3 pt-3">
         <button
           onClick={handleSignOut}
           title={collapsed ? "Sign out" : undefined}
-          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-muted hover:text-text hover:bg-surface-2 transition-all"
+          className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-muted transition-all hover:bg-surface-2 hover:text-text"
         >
-          <LogOut className="w-4 h-4 flex-shrink-0" />
+          <LogOut className="h-4 w-4 flex-shrink-0" />
           {!collapsed && <span>Sign out</span>}
         </button>
 
-        {/* Collapse toggle */}
         <button
           onClick={() => setCollapsed((c) => !c)}
           title={t("collapse")}
-          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-muted hover:text-text hover:bg-surface-2 transition-all"
+          className="flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-muted transition-all hover:bg-surface-2 hover:text-text"
         >
           {collapsed
-            ? <ChevronRight className="w-4 h-4 flex-shrink-0" />
+            ? <ChevronRight className="h-4 w-4 flex-shrink-0" />
             : <>
-                <ChevronLeft className="w-4 h-4 flex-shrink-0" />
+                <ChevronLeft className="h-4 w-4 flex-shrink-0" />
                 <span>{t("collapse")}</span>
               </>
           }

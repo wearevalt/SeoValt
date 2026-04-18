@@ -8,6 +8,8 @@ import { cn } from "@/lib/utils";
 import { createClient } from "@/lib/supabase/client";
 import { toast } from "sonner";
 
+const FALLBACK_APP_URL = "https://seo-valt.vercel.app";
+
 export default function LoginPage() {
   const t = useTranslations("auth.login");
   const locale = useLocale();
@@ -18,9 +20,9 @@ export default function LoginPage() {
 
   const getAuthCallbackUrl = () => {
     const configured = process.env.NEXT_PUBLIC_APP_URL?.replace(/\/$/, "");
-    const origin =
-      configured ||
-      (typeof window !== "undefined" ? window.location.origin : "");
+    const browserOrigin =
+      typeof window !== "undefined" ? window.location.origin.replace(/\/$/, "") : "";
+    const origin = browserOrigin || configured || FALLBACK_APP_URL;
     const next = encodeURIComponent(`/${locale}/dashboard`);
     return `${origin}/${locale}/auth/callback?next=${next}`;
   };
@@ -53,8 +55,10 @@ export default function LoginPage() {
         options: { redirectTo: getAuthCallbackUrl() },
       });
       if (error) throw error;
-    } catch {
-      toast.error("Failed to connect with Google");
+    } catch (err: unknown) {
+      const message =
+        err instanceof Error ? err.message : "Failed to connect with Google";
+      toast.error(message);
       setGLoading(false);
     }
   };

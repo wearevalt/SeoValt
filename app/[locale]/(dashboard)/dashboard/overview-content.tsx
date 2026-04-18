@@ -1,8 +1,8 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
-import { FileText, Wrench, Gauge, CreditCard, Clock, CheckCircle2, TrendingUp, Zap } from "lucide-react";
+import type { ElementType } from "react";
+import { CheckCircle2, Clock, FileText, Gauge, TrendingUp, Zap } from "lucide-react";
 import { cn, PLANS, type PlanKey } from "@/lib/utils";
 import type { User } from "@supabase/supabase-js";
 
@@ -11,9 +11,10 @@ interface OverviewContentProps {
   profile: Record<string, unknown> | null;
   quotas: Record<string, unknown> | null;
   activity: Record<string, unknown>[];
+  siteCount: number;
 }
 
-const ACTION_ICONS: Record<string, React.ElementType> = {
+const ACTION_ICONS: Record<string, ElementType> = {
   generate_article: FileText,
   fix_seo: CheckCircle2,
   check_pagespeed: Gauge,
@@ -32,58 +33,93 @@ const ACTION_COLORS: Record<string, string> = {
 };
 
 function timeAgo(date: string): string {
-  const seconds = Math.floor((Date.now() - new Date(date).getTime()) / 1000);
+  const timestamp = new Date(date).getTime();
+  if (Number.isNaN(timestamp)) return "just now";
+
+  const seconds = Math.floor((Date.now() - timestamp) / 1000);
   if (seconds < 60) return `${seconds}s ago`;
   if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
   if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
   return `${Math.floor(seconds / 86400)}d ago`;
 }
 
-export function OverviewContent({ user, profile, quotas, activity }: OverviewContentProps) {
+function toPositiveNumber(value: unknown): number {
+  if (typeof value === "number" && Number.isFinite(value) && value > 0) {
+    return value;
+  }
+  return 0;
+}
+
+function normalizePlan(rawPlan: unknown): PlanKey {
+  if (rawPlan === "free" || rawPlan === "pro" || rawPlan === "agency") {
+    return rawPlan;
+  }
+  return "free";
+}
+
+function getActivityLabel(action: string): string {
+  if (!action) return "Unknown action";
+  return action
+    .replace(/_/g, " ")
+    .replace(/\b\w/g, (char) => char.toUpperCase());
+}
+
+function getDaysUntilRenewal(subscriptionEndsAt: unknown): number | null {
+  if (typeof subscriptionEndsAt !== "string" || !subscriptionEndsAt) return null;
+  const endDate = new Date(subscriptionEndsAt).getTime();
+  if (Number.isNaN(endDate)) return null;
+
+  const diff = endDate - Date.now();
+  return Math.ceil(diff / (1000 * 60 * 60 * 24));
+}
+
+function progressValue(value: number, max: number | null): number {
+  if (max === null) return 100;
+  if (max <= 0) return 0;
+  return Math.min((value / max) * 100, 100);
+}
+
+export function OverviewContent({
+  user,
+  profile,
+  quotas,
+  activity,
+  siteCount,
+}: OverviewContentProps) {
   const t = useTranslations("dashboard.overview");
-  const plan = (profile?.plan as PlanKey) || "free";
+  const plan = normalizePlan(profile?.plan);
   const planData = PLANS[plan];
   const name = (profile?.full_name as string) || user.email?.split("@")[0] || "there";
+  const renewalDays = getDaysUntilRenewal(profile?.subscription_ends_at);
 
-  const usedArticles = (quotas?.articles_generated as number) || 0;
-  const usedFixes = (quotas?.seo_fixes as number) || 0;
-  const usedPagespeed = (quotas?.pagespeed_checks as number) || 0;
+  const usedArticles = toPositiveNumber(quotas?.articles_generated);
+  const usedFixes = toPositiveNumber(quotas?.seo_fixes);
+  const usedPagespeed = toPositiveNumber(quotas?.pagespeed_checks);
+  const usedSites = Math.max(0, siteCount);
 
   const stats = [
     {
       label: t("articles"),
       value: usedArticles,
       max: planData.articles === -1 ? null : planData.articles,
-      icon: FileText,
-      color: "text-cyan",
-      bg: "bg-cyan-dim",
       bar: "bg-cyan",
     },
     {
       label: t("seoFixes"),
       value: usedFixes,
       max: planData.seoFixes === -1 ? null : planData.seoFixes,
-      icon: Wrench,
-      color: "text-emerald",
-      bg: "bg-emerald-dim",
-      bar: "bg-emerald",
+      bar: "bg-sky-400",
     },
     {
       label: t("pagespeed"),
       value: usedPagespeed,
       max: planData.pagespeedChecks === -1 ? null : planData.pagespeedChecks,
-      icon: Gauge,
-      color: "text-violet",
-      bg: "bg-violet-dim",
       bar: "bg-violet",
     },
     {
-      label: t("credits"),
-      value: "∞",
-      max: null,
-      icon: CreditCard,
-      color: "text-emerald",
-      bg: "bg-emerald-dim",
+      label: "Sites",
+      value: usedSites,
+      max: planData.sites,
       bar: "bg-emerald",
     },
   ];
@@ -95,100 +131,100 @@ export function OverviewContent({ user, profile, quotas, activity }: OverviewCon
   };
 
   return (
-    <div className="p-6 max-w-5xl">
-      {/* Welcome */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
-        className="flex items-center justify-between mb-8"
-      >
+    <div className="mx-auto w-full max-w-6xl p-4 sm:p-6">
+      <div className="mb-5 flex items-start justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-black text-text">
-            {t("welcome")}, {name} 👋
+          <h1 className="text-2xl font-black text-text sm:text-3xl">
+            {t("welcome")}, {name}
           </h1>
-          <p className="text-sm text-muted mt-1">
-            Here&apos;s your SEO autopilot overview
+          <p className="mt-1 text-sm text-muted">
+            {renewalDays !== null && renewalDays >= 0
+              ? `${planData.name} ${t("plan")} - ${renewalDays} days until renewal`
+              : `${planData.name} ${t("plan")}`}
           </p>
         </div>
-        <span className={cn("px-3 py-1 text-xs font-bold rounded-full uppercase", planBadgeColor[plan])}>
+
+        <span
+          className={cn(
+            "rounded-full px-3 py-1 text-xs font-bold uppercase",
+            planBadgeColor[plan]
+          )}
+        >
           {plan} {t("plan")}
         </span>
-      </motion.div>
+      </div>
 
-      {/* Stats grid */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
-        {stats.map((stat, i) => (
-          <motion.div
+      <div className="grid gap-3 md:grid-cols-2">
+        {stats.map((stat) => (
+          <div
             key={stat.label}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.05 + i * 0.05 }}
-            className="bg-surface rounded-xl p-4 border border-border"
+            className="rounded-2xl border border-border bg-surface-2/70 p-4"
           >
-            <div className="flex items-center justify-between mb-3">
-              <div className={cn("w-8 h-8 rounded-lg flex items-center justify-center", stat.bg)}>
-                <stat.icon className={cn("w-4 h-4", stat.color)} />
-              </div>
-              <span className="text-xl font-black font-mono text-text">
-                {stat.value === "∞" ? "∞" : stat.value}
+            <div className="mb-2 flex items-center justify-between gap-3">
+              <span className="text-sm text-muted">{stat.label}</span>
+              <span className="text-2xl font-black font-mono text-text">
+                {stat.max === null ? "Unlimited" : stat.value}
               </span>
             </div>
-            <p className="text-xs text-muted mb-2">{stat.label}</p>
-            {stat.max !== null && typeof stat.value === "number" && (
-              <div className="w-full h-1 bg-border rounded-full overflow-hidden">
-                <div
-                  className={cn("h-full rounded-full transition-all", stat.bar)}
-                  style={{ width: `${Math.min((stat.value / stat.max) * 100, 100)}%` }}
-                />
-              </div>
+
+            <div className="h-1.5 w-full overflow-hidden rounded-full bg-border">
+              <div
+                className={cn("h-full rounded-full", stat.bar)}
+                style={{ width: `${progressValue(stat.value, stat.max)}%` }}
+              />
+            </div>
+
+            {stat.max !== null && (
+              <p className="mt-1 text-xs text-muted">
+                {stat.value} / {stat.max}
+              </p>
             )}
-            {stat.max !== null && typeof stat.value === "number" && (
-              <p className="text-xs text-muted mt-1">{stat.value} / {stat.max}</p>
+
+            {stat.max === null && (
+              <p className="mt-1 text-xs text-muted">No monthly limit</p>
             )}
-          </motion.div>
+          </div>
         ))}
       </div>
 
-      {/* Activity feed */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: 0.3 }}
-        className="bg-surface rounded-xl border border-border p-5"
-      >
-        <div className="flex items-center justify-between mb-4">
-          <h2 className="text-sm font-bold text-text">{t("recentActivity")}</h2>
-          <a href="./usage" className="text-xs text-emerald hover:text-emerald-br transition-colors">{t("viewAll")}</a>
-        </div>
+      <div className="mt-6 rounded-2xl border border-border bg-surface/60 p-4 sm:p-5">
+        <h2 className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-subtle">
+          {t("recentActivity")}
+        </h2>
 
         {activity.length === 0 ? (
-          <div className="py-10 text-center">
-            <Clock className="w-8 h-8 text-muted mx-auto mb-3" />
+          <div className="py-8 text-center">
+            <Clock className="mx-auto mb-3 h-8 w-8 text-muted" />
             <p className="text-sm font-medium text-text">{t("noActivity")}</p>
-            <p className="text-xs text-muted mt-1 max-w-xs mx-auto">{t("noActivityDesc")}</p>
+            <p className="mx-auto mt-1 max-w-xs text-xs text-muted">
+              {t("noActivityDesc")}
+            </p>
           </div>
         ) : (
           <div className="space-y-1">
             {activity.map((item, i) => {
-              const action = item.action as string;
+              const action = typeof item.action === "string" ? item.action : "";
               const Icon = ACTION_ICONS[action] ?? Zap;
               const color = ACTION_COLORS[action] ?? "text-muted";
+              const createdAt =
+                typeof item.created_at === "string" ? item.created_at : "";
+
               return (
-                <div key={i} className="flex items-center gap-3 py-2.5 px-2 rounded-lg hover:bg-surface-2 transition-colors">
-                  <Icon className={cn("w-4 h-4 flex-shrink-0", color)} />
-                  <span className="text-sm text-text flex-1 capitalize">
-                    {(action ?? "").replace(/_/g, " ")}
+                <div
+                  key={i}
+                  className="flex items-center gap-3 rounded-lg px-2 py-2.5 transition-colors hover:bg-surface-2"
+                >
+                  <Icon className={cn("h-4 w-4 flex-shrink-0", color)} />
+                  <span className="flex-1 text-sm text-text">
+                    {getActivityLabel(action)}
                   </span>
-                  <span className="text-xs text-muted">
-                    {timeAgo(item.created_at as string)}
-                  </span>
+                  <span className="text-xs text-muted">{timeAgo(createdAt)}</span>
                 </div>
               );
             })}
           </div>
         )}
-      </motion.div>
+      </div>
     </div>
   );
 }
