@@ -45,7 +45,7 @@ function isActiveRoute(pathname: string, href: string): boolean {
   );
 }
 
-export function Sidebar() {
+export function Sidebar({ isAdmin }: { isAdmin: boolean }) {
   const t = useTranslations("dashboard.sidebar");
   const pathname = usePathname();
   const [collapsed, setCollapsed] = useState(false);
@@ -59,7 +59,9 @@ export function Sidebar() {
   ];
 
   const secondaryNavItems = [
-    { icon: Shield,          label: "Admin",       href: "/admin/licenses" },
+    ...(isAdmin
+      ? [{ icon: Shield, label: "Admin", href: "/admin/licenses" }]
+      : []),
     { icon: Settings,        label: t("settings"),  href: "/dashboard/settings" },
     { icon: BookOpen,        label: t("docs"),       href: "/docs", external: true },
   ];

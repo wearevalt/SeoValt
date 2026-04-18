@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { Sidebar } from "@/components/dashboard/sidebar";
 import { DashboardTopTabs } from "@/components/dashboard/top-tabs";
+import { isAdminEmail } from "@/lib/auth/admin";
 
 export default async function DashboardLayout({
   children,
@@ -18,6 +19,8 @@ export default async function DashboardLayout({
     redirect(`/${locale}/login`);
   }
 
+  const isAdmin = isAdminEmail(user.email);
+
   return (
     <div className="min-h-screen bg-background p-2 sm:p-4">
       <div className="mx-auto flex h-[calc(100vh-1rem)] max-w-[1400px] flex-col overflow-hidden rounded-3xl border border-border-b bg-surface/70 shadow-[0_0_80px_rgba(16,185,129,0.08)] sm:h-[calc(100vh-2rem)]">
@@ -29,7 +32,7 @@ export default async function DashboardLayout({
         </div>
 
         <div className="flex min-h-0 flex-1">
-          <Sidebar />
+          <Sidebar isAdmin={isAdmin} />
           <main className="flex min-h-0 flex-1 flex-col overflow-hidden">
             <DashboardTopTabs />
             <div className="min-h-0 flex-1 overflow-y-auto">{children}</div>

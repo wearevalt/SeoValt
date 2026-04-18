@@ -9,7 +9,8 @@ export function getAdminEmails(): string[] {
   if (!raw) return DEFAULT_ADMIN_EMAILS;
 
   const list = raw
-    .split(",")
+    .split(/[,\n;]+/)
+    .map((entry) => entry.trim().replace(/^["']|["']$/g, ""))
     .map((entry) => normalizeEmail(entry))
     .filter(Boolean);
 
