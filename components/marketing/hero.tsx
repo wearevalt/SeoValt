@@ -28,7 +28,7 @@ export function Hero() {
   ];
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-16 overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-start pt-36 pb-16 overflow-hidden">
       {/* Backgrounds */}
       <GradientOrbs />
       <ParticleField />
@@ -72,7 +72,7 @@ export function Hero() {
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="mt-6 text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-text leading-[1.05]"
+          className="mt-4 text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-text leading-[1.05]"
         >
           {t("title")}{" "}
           <span className="gradient-text">{t("titleHighlight")}</span>
@@ -84,7 +84,7 @@ export function Hero() {
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="mt-6 text-lg sm:text-xl text-muted max-w-2xl mx-auto leading-relaxed"
+          className="mt-5 text-lg sm:text-xl text-muted max-w-2xl mx-auto leading-relaxed"
         >
           {t("subtitle")}
         </motion.p>
@@ -95,7 +95,7 @@ export function Hero() {
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3"
+          className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3"
         >
           <Link
             href="/signup"

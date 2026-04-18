@@ -32,68 +32,93 @@
     "dashboard": "Tableau de bord"
   },
   "hero": {
-    "badge": "SEO WordPress en Pilote Automatique",
-    "title": "Votre SEO en",
-    "titleHighlight": "pilote automatique",
-    "subtitle": "Installez le plugin une fois. SEOVALT gère le reste — articles IA, corrections SEO, surveillance PageSpeed et rapports hebdomadaires.",
-    "cta": "Commencer Gratuitement",
-    "ctaSecondary": "Voir la démo",
+    "badge": "SEO · AEO · GEO — Autopilot",
+    "title": "SEOVALT pour WordPress.",
+    "titleHighlight": "SEO + AEO + GEO en autopilot",
+    "subtitle": "Mettez votre WordPress en pilote automatique : corrigez le SEO, générez du contenu IA et soyez visible sur Google, ChatGPT et les assistants vocaux.",
+    "cta": "Commencer gratuitement",
+    "ctaSecondary": "Voir en action",
     "stat1Value": "12 000+",
     "stat1Label": "articles générés",
-    "stat2Value": "99%",
-    "stat2Label": "score SEO",
+    "stat2Value": "92%",
+    "stat2Label": "taux de correction IA",
     "stat3Value": "500+",
-    "stat3Label": "sites actifs"
+    "stat3Label": "sites sur autopilot"
   },
   "trust": {
-    "label": "Utilisé par plus de 1 000 sites WordPress dans le monde"
+    "label": "Plus de 1 000 sites WordPress dans 30+ pays nous font confiance"
+  },
+  "positioning": {
+    "badge": "Positionnement clé",
+    "title": "Pourquoi choisir SEOVALT pour votre WordPress ?",
+    "subtitle": "Une extension simple qui corrige votre site, crée du contenu optimisé et prépare votre présence pour les moteurs classiques et l’intelligence artificielle.",
+    "items": [
+      { "title": "SEO prêt à l’emploi", "description": "Analyse et corrections automatiques pour titres, metas, H1, slugs et images." },
+      { "title": "Contenu IA performant", "description": "Générez des articles optimisés en un clic, prêts à être publiés ou revus." },
+      { "title": "Visibilité AEO", "description": "Optimisez chaque page pour les featured snippets et les résultats AI." },
+      { "title": "Présence vocale", "description": "Réponses courtes, ton naturel et schema Speakable pour Siri, Alexa et Google." },
+      { "title": "Citations par IA", "description": "Mesurez votre potentiel de citation sur ChatGPT, Perplexity et Gemini." },
+      { "title": "Rapports simples", "description": "Recevez des alertes et un résumé hebdomadaire sans rien configurer." }
+    ]
   },
   "features": {
-    "badge": "Tout ce qu'il vous faut",
-    "title": "Un SEO qui travaille pendant que vous dormez",
-    "subtitle": "Six outils puissants, un seul plugin WordPress. Aucune configuration requise.",
+    "badge": "Ce que SEOVALT fait pour vous",
+    "title": "SEO + AEO + GEO en pilote automatique",
+    "subtitle": "Une suite WordPress qui combine contenu IA, corrections automatiques et visibilité sur les moteurs IA.",
     "items": {
       "articles": {
-        "title": "Génération d'articles IA",
-        "description": "Générez automatiquement des articles de blog optimisés SEO, adaptés à votre niche et à votre stratégie de mots-clés. Entièrement en pilote automatique."
+        "title": "Des articles IA qui rankent vraiment",
+        "description": "Générez des articles optimisés SEO en un clic : titres, métas, H2/H3, liens internes et textes ALT — tout rédigé par l'IA."
       },
       "scanner": {
-        "title": "Scanner SEO intelligent",
-        "description": "Audit complet du site : balises H1, méta-descriptions, titres, qualité des slugs, densité des mots-clés, et bien plus encore."
+        "title": "Corrigez chaque problème SEO automatiquement",
+        "description": "Audit complet en secondes — H1 manquants, méta vides, slugs cassés, alt images, sitemap. Corrigez tout en un clic."
       },
-      "vitals": {
-        "title": "Core Web Vitals",
-        "description": "Surveillez LCP, INP et CLS via Google PageSpeed Insights. Obtenez des recommandations actionnables instantanément."
+      "geo": {
+        "title": "Soyez cité par ChatGPT et Perplexity",
+        "description": "Mesurez la probabilité que les IA citent votre contenu. Gérez votre llms.txt et suivez votre présence dans Gemini et ChatGPT."
       },
-      "images": {
-        "title": "Optimisation des images",
-        "description": "Générez en masse des textes ALT IA pour chaque image de votre médiathèque. Un clic, tout le site couvert."
+      "aeo": {
+        "title": "Gagnez les featured snippets",
+        "description": "Optimisez vos pages pour l'Answer Engine Optimization et faites-vous remarquer dans les AI Overviews de Google."
       },
-      "competitors": {
-        "title": "Analyse concurrentielle",
-        "description": "Analysez les classements de vos concurrents et alimentez automatiquement votre pool de mots-clés avec les termes les plus porteurs."
+      "voice": {
+        "title": "Optimisé pour la recherche vocale",
+        "description": "Réponses courtes, ton conversationnel, schema Speakable. Quand Siri ou Alexa pose une question, c'est votre site qui répond."
       },
-      "meta": {
-        "title": "Balises méta en autopilot",
-        "description": "Injectez titres, descriptions, URLs canoniques et balisage Schema.org — même sans Yoast ou RankMath."
+      "questions": {
+        "title": "Trouvez les questions que cherchent les gens",
+        "description": "Tapez un mot-clé, obtenez 100+ questions réelles depuis Google et YouTube. Génèrez un article depuis n'importe quelle question en un clic."
+      },
+      "entity": {
+        "title": "Injection automatique de Schema.org",
+        "description": "SEOVALT détecte organisations, produits, personnes et lieux et injecte le bon JSON-LD pour que Google et l'IA comprennent vos entités."
+      },
+      "pagespeed": {
+        "title": "Core Web Vitals en autopilot",
+        "description": "Surveillez LCP, INP et CLS via Google PageSpeed. Recevez des recommandations actionnables et suivez votre score dans le temps."
       }
     }
   },
   "howItWorks": {
-    "badge": "3 étapes",
-    "title": "De l'installation au pilote automatique en quelques minutes",
+    "badge": "4 étapes",
+    "title": "Installez, scannez, lancez, laissez faire.",
     "steps": {
       "install": {
-        "title": "Installez le plugin",
-        "description": "Téléchargez le .zip SEOVALT et uploadez-le sur votre site WordPress depuis la page Extensions."
+        "title": "Installez en 30 secondes",
+        "description": "Téléchargez le .zip, uploadez sur WordPress. Aucune configuration requise."
       },
       "license": {
-        "title": "Ajoutez votre clé de licence",
-        "description": "Collez votre clé de licence dans les paramètres du plugin. Votre accès API est activé instantanément."
+        "title": "Activez votre licence",
+        "description": "Collez votre clé. Toutes les APIs sont gérées côté serveur — rien à configurer."
+      },
+      "scan": {
+        "title": "Premier scan en 60 secondes",
+        "description": "SEOVALT scanne tout votre site et affiche chaque problème SEO. Corrigez tout en un clic."
       },
       "autopilot": {
-        "title": "Le SEO tourne en autopilot",
-        "description": "SEOVALT commence à scanner, corriger et générer du contenu. Vous recevez un rapport SEO hebdomadaire par email."
+        "title": "SEO sur autopilot",
+        "description": "Relaxez-vous. SEOVALT génère du contenu, corrige les problèmes, surveille les performances et envoie un rapport hebdo."
       }
     }
   },
@@ -108,61 +133,102 @@
     }
   },
   "pricing": {
-    "badge": "Tarifs simples",
-    "title": "Gratuit pour commencer. Évoluez selon vos besoins.",
-    "subtitle": "Sans frais cachés. Résiliez quand vous voulez. Les plans annuels économisent 20%.",
+    "badge": "Tarifs",
+    "title": "Choisissez le plan SEOVALT adapté à votre volume SEO",
+    "subtitle": "De l'optimisation d'un site à la gestion multi-sites. Sans frais cachés. Résiliez quand vous voulez.",
     "monthly": "Mensuel",
     "yearly": "Annuel",
     "yearlySave": "Économisez 20%",
-    "popular": "Le Plus Populaire",
+    "popular": "Le plus populaire",
     "per_month": "/mois",
     "per_year": "/an",
-    "cta_free": "Commencer Gratuitement",
-    "cta_pro": "Démarrer avec Pro",
-    "cta_agency": "Passer Agency",
     "billed_yearly": "facturé annuellement",
+    "save_per_year": "Économisez {amount}€/an",
+    "cta_solo": "Commencer maintenant",
+    "cta_pro": "Choisir Pro",
+    "cta_agency": "Passer en Agency",
+    "included_title": "Chaque plan inclut",
+    "included_features": {
+      "audit": "Audit SEO complet",
+      "corrections": "Corrections prioritaires",
+      "technical": "SEO technique WordPress",
+      "geo": "GEO + AEO readiness"
+    },
     "plans": {
-      "free": {
-        "name": "Gratuit",
-        "tagline": "Pour les blogueurs solo qui démarrent",
+      "solo": {
+        "name": "SOLO",
+        "tagline": "Pour créateurs, indépendants et propriétaires d'un seul site",
+        "monthly_price": 49,
+        "yearly_price": 39,
         "features": [
-          "5 articles IA / mois",
-          "10 corrections SEO / mois",
-          "5 vérifications PageSpeed / mois",
-          "1 site WordPress",
-          "Rapport SEO hebdomadaire",
-          "Support communautaire"
+          "1 site connecté",
+          "Audit SEO complet",
+          "Recommandations d'optimisation",
+          "Corrections prioritaires",
+          "SEO technique de base",
+          "Optimisation métas",
+          "30 rapports SEO / mois"
         ]
       },
       "pro": {
-        "name": "Pro",
-        "tagline": "Pour les créateurs WordPress sérieux",
+        "name": "PRO",
+        "tagline": "Pour consultants SEO, éditeurs et business en croissance",
+        "monthly_price": 89,
+        "yearly_price": 69,
         "features": [
-          "50 articles IA / mois",
-          "Corrections SEO illimitées",
-          "100 vérifications PageSpeed / mois",
-          "3 sites WordPress",
-          "Support email prioritaire",
-          "Analyse concurrentielle",
-          "Textes ALT images en masse",
-          "Injection Schema.org"
+          "3 sites connectés",
+          "Tout le plan Solo",
+          "AEO score",
+          "GEO intelligence",
+          "Entity SEO",
+          "Optimisation images / ALT",
+          "Google Search Console intégré",
+          "90 rapports SEO / mois"
         ]
       },
       "agency": {
-        "name": "Agence",
-        "tagline": "Pour les agences gérant plusieurs clients",
+        "name": "AGENCY",
+        "tagline": "Pour agences et gestion multi-sites",
+        "monthly_price": 199,
+        "yearly_price": 159,
         "features": [
-          "Articles IA illimités",
-          "Corrections SEO illimitées",
-          "Vérifications PageSpeed illimitées",
-          "10 sites WordPress",
-          "Support dédié",
-          "Rapports en marque blanche",
-          "Accès API",
-          "Pools de mots-clés personnalisés"
+          "10 sites connectés",
+          "Tout le plan Pro",
+          "Gestion multi-sites",
+          "Rapports avancés",
+          "Priorisation par site",
+          "Onboarding dédié",
+          "Support prioritaire",
+          "250 rapports SEO / mois"
         ]
       }
     }
+  },
+  "pricing_faq": {
+    "title": "Questions fréquentes sur les tarifs",
+    "subtitle": "Tout ce que vous devez savoir avant de choisir votre plan",
+    "items": [
+      {
+        "q": "Puis-je changer de plan ?",
+        "a": "Oui, vous pouvez upgrader ou downgrader votre plan à tout moment depuis votre tableau de bord. La modification est immédiate et le montant est ajusté au prorata."
+      },
+      {
+        "q": "Que se passe-t-il si je dépasse ma limite de rapports ?",
+        "a": "SEOVALT vous notifie lorsque vous approchez de votre limite. Une fois atteinte, la génération de nouveaux rapports est暂停 jusqu'au mois suivant ou jusqu'à un upgrade. Vos données existantes restent accessibles."
+      },
+      {
+        "q": "Puis-je connecter plusieurs sites WordPress ?",
+        "a": "Oui. Le plan SOLO permet 1 site, le plan PRO permet 3 sites, et le plan AGENCY permet 10 sites. Chaque site dispose de sa propre clé de licence générée depuis votre tableau de bord."
+      },
+      {
+        "q": "GEO et AEO sont-ils inclus ?",
+        "a": "Oui, GEO intelligence et AEO score sont inclus dans les plans PRO et AGENCY. Le plan SOLO inclut les bases du SEO technique mais pas ces fonctionnalités avancées."
+      },
+      {
+        "q": "Y a-t-il un essai gratuit ?",
+        "a": "Oui, tous les plans bénéficient d'une période d'essai gratuite de 7 jours. Aucune carte bancaire requise pour commencer. Si le produit ne vous convient pas, résiliez avant la fin de l'essai."
+      }
+    ]
   },
   "testimonials": {
     "badge": "Témoignages",
@@ -188,6 +254,90 @@
         "role": "E-commerçante",
         "company": "NaturalGoods.pl",
         "avatar": "elena"
+      },
+      {
+        "quote": "La fonction de reconnaissance d'entités de SEOVALT m'a aidé à me classer pour des mots-clés longue traîne auxquels je n'avais jamais pensé. Le SEO sémantique de mon site s'est considérablement amélioré.",
+        "name": "David Chen",
+        "role": "Spécialiste marketing digital",
+        "company": "GrowthLabs",
+        "avatar": "david"
+      },
+      {
+        "quote": "L'optimisation pour la recherche vocale a été un vrai game-changer pour mon entreprise locale. Je me classe maintenant pour les recherches 'près de chez moi' et les requêtes conversationnelles.",
+        "name": "Maria Rodriguez",
+        "role": "Propriétaire d'entreprise locale",
+        "company": "Bella Vista Café",
+        "avatar": "maria"
+      },
+      {
+        "quote": "L'optimisation PageSpeed seule m'a fait économiser des milliers en coûts d'hébergement. SEOVALT a identifié et corrigé des goulots d'étranglement dont j'ignorais l'existence.",
+        "name": "Alex Johnson",
+        "role": "Développeur WordPress",
+        "company": "DevSolutions",
+        "avatar": "alex"
+      },
+      {
+        "quote": "Les rapports de performance hebdomadaires sont incroyablement détaillés. Je peux voir exactement comment ma stratégie SEO évolue sans surveillance constante.",
+        "name": "Lisa Thompson",
+        "role": "Spécialiste SEO",
+        "company": "ContentMasters",
+        "avatar": "lisa"
+      },
+      {
+        "quote": "Les outils SEO géographiques de SEOVALT ont aidé mon entreprise multi-sites à dominer les résultats de recherche locale dans 15 villes.",
+        "name": "James Wilson",
+        "role": "Propriétaire de franchise",
+        "company": "FitLife Gyms",
+        "avatar": "james"
+      },
+      {
+        "quote": "Les fonctionnalités AEO m'ont aidé à me classer dans les boîtes de réponse de Google. Mes extraits en vedette ont augmenté de 300% en seulement deux mois.",
+        "name": "Sophie Laurent",
+        "role": "Stratège de contenu",
+        "company": "DigitalFirst",
+        "avatar": "sophie"
+      },
+      {
+        "quote": "J'étais sceptique quant aux outils SEO IA, mais SEOVALT m'a prouvé le contraire. C'est comme avoir une équipe SEO complète travaillant 24/7.",
+        "name": "Robert Kim",
+        "role": "Propriétaire de petite entreprise",
+        "company": "Kim's Electronics",
+        "avatar": "robert"
+      },
+      {
+        "quote": "L'implémentation automatisée du balisage schema est parfaite. Des rich snippets partout et mon CTR a doublé.",
+        "name": "Anna Petrov",
+        "role": "Manager E-commerce",
+        "company": "ShopGlobal",
+        "avatar": "anna"
+      },
+      {
+        "quote": "La fonction d'analyse concurrentielle de SEOVALT me donne des insights que je ne peux obtenir nulle part ailleurs. Ma stratégie de mots-clés est maintenant imbattable.",
+        "name": "Michael Brown",
+        "role": "Consultant SEO",
+        "company": "RankBoosters",
+        "avatar": "michael"
+      },
+      {
+        "quote": "Les liens internes automatisés de SEOVALT ont transformé l'architecture de mon site. L'efficacité de mon budget de crawl a augmenté de 40%.",
+        "name": "Carlos Mendoza",
+        "role": "Manager SEO",
+        "company": "TechCorp",
+        "avatar": "carlos"
+      },
+      {
+        "quote": "Les fonctionnalités d'optimisation SEO mobile sont incroyables. Mes classements de recherche mobile se sont considérablement améliorés après avoir implémenté les recommandations de SEOVALT.",
+        "name": "Emma Davis",
+        "role": "Spécialiste marketing mobile",
+        "company": "MobileFirst",
+        "avatar": "emma"
+      },
+      {
+        "quote": "SEOVALT a détecté et corrigé les problèmes de contenu dupliqué sur mon site de 50+ pages en quelques minutes. Je ne savais même pas qu'ils existaient.",
+        "name": "Thomas Wright",
+        "role": "Manager de contenu",
+        "company": "ContentHub",
+        "avatar": "thomas"
       }
     ]
   },
@@ -238,10 +388,10 @@
     ]
   },
   "cta": {
-    "title": "Arrêtez de corriger le SEO manuellement.",
-    "titleHighlight": "SEOVALT s'en charge.",
-    "subtitle": "Rejoignez 1 000+ sites WordPress en pilote automatique SEO. Commencez gratuitement en moins de 2 minutes.",
-    "button": "Commencer Gratuitement",
+    "title": "Arrêtez d'optimiser pour le search d'hier.",
+    "titleHighlight": "Commencez à ranker partout.",
+    "subtitle": "Google. ChatGPT. Perplexity. Alexa. SEOVALT vous rend visible sur tous.",
+    "button": "Commencer gratuitement",
     "buttonSecondary": "Voir les tarifs"
   },
   "footer": {

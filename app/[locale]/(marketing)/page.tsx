@@ -4,6 +4,7 @@ import { Hero } from "@/components/marketing/hero";
 import { TrustBar } from "@/components/marketing/trust-bar";
 import { Features } from "@/components/marketing/features";
 import { HowItWorks } from "@/components/marketing/how-it-works";
+import { Positioning } from "@/components/marketing/positioning";
 import { Pricing } from "@/components/marketing/pricing";
 import { Testimonials } from "@/components/marketing/testimonials";
 import { FAQ } from "@/components/marketing/faq";
@@ -19,8 +20,9 @@ export async function generateMetadata(
 
 export default function HomePage() {
   return (
-    <>
+    <div className="space-y-28">
       <Hero />
+      <Positioning />
       <TrustBar />
       <Features />
       <HowItWorks />
@@ -28,6 +30,6 @@ export default function HomePage() {
       <Testimonials />
       <FAQ />
       <FinalCTA />
-    </>
+    </div>
   );
 }

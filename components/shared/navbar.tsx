@@ -30,13 +30,14 @@ export function Navbar() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          "fixed top-4 left-1/2 z-50 w-[calc(100%-1.5rem)] max-w-5xl -translate-x-1/2 rounded-[28px] transition-all duration-300 backdrop-blur-xl",
           scrolled
-            ? "glass border-b border-border-b"
-            : "bg-transparent"
+            ? "glass border border-white/10 bg-surface/95 shadow-[0_18px_70px_rgba(2,12,37,0.22)]"
+            : "glass border border-white/10 bg-surface/90"
         )}
       >
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        <div className="pointer-events-none absolute -top-4 right-6 w-12 h-12 rounded-full bg-emerald/12 blur-2xl" />
+        <nav className="w-full px-3 sm:px-5 h-16 flex items-center justify-between">
           {/* Logo */}
           <Logo />
 
@@ -94,7 +95,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-16 z-40 glass border-b border-border-b md:hidden"
+            className="fixed inset-x-0 top-20 z-40 bg-surface/95 backdrop-blur-xl border-t border-border-b md:hidden"
           >
             <div className="px-4 py-4 flex flex-col gap-2">
               {navLinks.map((l) => (

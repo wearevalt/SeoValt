@@ -188,6 +188,90 @@
         "role": "E-commerce Owner",
         "company": "NaturalGoods.pl",
         "avatar": "elena"
+      },
+      {
+        "quote": "SEOVALT's entity recognition feature helped me rank for long-tail keywords I never even considered. My site's semantic SEO improved dramatically.",
+        "name": "David Chen",
+        "role": "Digital Marketer",
+        "company": "GrowthLabs",
+        "avatar": "david"
+      },
+      {
+        "quote": "The voice search optimization was a game-changer for my local business. I now rank for 'near me' searches and conversational queries.",
+        "name": "Maria Rodriguez",
+        "role": "Local Business Owner",
+        "company": "Bella Vista Café",
+        "avatar": "maria"
+      },
+      {
+        "quote": "PageSpeed optimization alone saved me thousands in hosting costs. SEOVALT identified and fixed bottlenecks I didn't know existed.",
+        "name": "Alex Johnson",
+        "role": "WordPress Developer",
+        "company": "DevSolutions",
+        "avatar": "alex"
+      },
+      {
+        "quote": "The weekly performance reports are incredibly detailed. I can see exactly how my SEO strategy is evolving without constant monitoring.",
+        "name": "Lisa Thompson",
+        "role": "SEO Specialist",
+        "company": "ContentMasters",
+        "avatar": "lisa"
+      },
+      {
+        "quote": "SEOVALT's geographic SEO tools helped my multi-location business dominate local search results across 15 cities.",
+        "name": "James Wilson",
+        "role": "Franchise Owner",
+        "company": "FitLife Gyms",
+        "avatar": "james"
+      },
+      {
+        "quote": "The AEO features helped me rank in Google's answer boxes. My featured snippets increased by 300% in just two months.",
+        "name": "Sophie Laurent",
+        "role": "Content Strategist",
+        "company": "DigitalFirst",
+        "avatar": "sophie"
+      },
+      {
+        "quote": "I was skeptical about AI SEO tools, but SEOVALT proved me wrong. It's like having a full SEO team working 24/7.",
+        "name": "Robert Kim",
+        "role": "Small Business Owner",
+        "company": "Kim's Electronics",
+        "avatar": "robert"
+      },
+      {
+        "quote": "The automated schema markup implementation is flawless. Rich snippets everywhere and my CTR doubled.",
+        "name": "Anna Petrov",
+        "role": "E-commerce Manager",
+        "company": "ShopGlobal",
+        "avatar": "anna"
+      },
+      {
+        "quote": "The competitor analysis feature of SEOVALT gives me insights I can't get anywhere else. My keyword strategy is now unbeatable.",
+        "name": "Michael Brown",
+        "role": "SEO Consultant",
+        "company": "RankBoosters",
+        "avatar": "michael"
+      },
+      {
+        "quote": "SEOVALT's automated internal linking has transformed my site's architecture. My crawl budget efficiency increased by 40%.",
+        "name": "Carlos Mendoza",
+        "role": "SEO Manager",
+        "company": "TechCorp",
+        "avatar": "carlos"
+      },
+      {
+        "quote": "The mobile SEO optimization features are incredible. My mobile search rankings improved dramatically after implementing SEOVALT's recommendations.",
+        "name": "Emma Davis",
+        "role": "Mobile Marketing Specialist",
+        "company": "MobileFirst",
+        "avatar": "emma"
+      },
+      {
+        "quote": "SEOVALT detected and fixed duplicate content issues across my 50+ page site in minutes. I didn't even know they existed.",
+        "name": "Thomas Wright",
+        "role": "Content Manager",
+        "company": "ContentHub",
+        "avatar": "thomas"
       }
     ]
   },

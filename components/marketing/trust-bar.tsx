@@ -29,23 +29,40 @@ export function TrustBar() {
         style={{ background: "linear-gradient(270deg, var(--bg) 0%, transparent 100%)" }}
         aria-hidden />
 
-      <p className="text-center text-xs text-muted uppercase tracking-widest mb-6 px-4">
-        {t("label")}
-      </p>
+      <div className="space-y-4">
+        <div className="relative overflow-hidden rounded-full border border-border/40 bg-surface/60 py-3">
+          <div className="flex gap-12 items-center marquee-track whitespace-nowrap px-4">
+            {items.map((logo, i) => (
+              <span
+                key={`top-${logo.name}-${i}`}
+                className={cn(
+                  "text-muted/50 hover:text-muted transition-colors flex-shrink-0",
+                )}
+                title={logo.name}
+              >
+                {logo.svg}
+              </span>
+            ))}
+          </div>
+        </div>
 
-      <div className="relative flex overflow-hidden">
-        <div className="flex gap-12 items-center marquee-track whitespace-nowrap">
-          {items.map((logo, i) => (
-            <span
-              key={`${logo.name}-${i}`}
-              className={cn(
-                "text-muted/50 hover:text-muted transition-colors flex-shrink-0",
-              )}
-              title={logo.name}
-            >
-              {logo.svg}
-            </span>
-          ))}
+        <div className="relative overflow-hidden rounded-full border border-border/30 bg-surface/50 py-3">
+          <div
+            className="flex gap-12 items-center marquee-track whitespace-nowrap px-4"
+            style={{ animationDirection: "reverse" }}
+          >
+            {items.map((logo, i) => (
+              <span
+                key={`bottom-${logo.name}-${i}`}
+                className={cn(
+                  "text-muted/50 hover:text-muted transition-colors flex-shrink-0",
+                )}
+                title={logo.name}
+              >
+                {logo.svg}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -32,68 +32,96 @@
     "dashboard": "Panel de control"
   },
   "hero": {
-    "badge": "SEO de WordPress en Piloto Automático",
-    "title": "Tu SEO en",
-    "titleHighlight": "piloto automático",
-    "subtitle": "Instala el plugin una vez. SEOVALT se encarga del resto: artículos IA, correcciones SEO, monitoreo PageSpeed e informes semanales.",
+    "badge": "SEO · AEO · GEO — Autopilot",
+    "title": "Posiciona en Google. Sé citado por IA.",
+    "titleHighlight": "Todo en autopiloto.",
+    "subtitle": "SEOVALT corrige tu SEO, genera contenido optimizado y hace tu sitio visible en ChatGPT, Perplexity y asistentes de voz — mientras duermes.",
     "cta": "Empezar Gratis",
-    "ctaSecondary": "Ver demo",
+    "ctaSecondary": "Ver en acción",
     "stat1Value": "12.000+",
     "stat1Label": "artículos generados",
-    "stat2Value": "99%",
-    "stat2Label": "puntuación SEO",
+    "stat2Value": "92%",
+    "stat2Label": "tasa de corrección IA",
     "stat3Value": "500+",
-    "stat3Label": "sitios activos"
+    "stat3Label": "sitios en autopiloto"
   },
   "trust": {
-    "label": "Utilizado por más de 1.000 sitios WordPress en todo el mundo"
+    "label": "Más de 1.000 sitios WordPress en 30+ países confían en nosotros"
+  },
+  "positioning": {
+    "badge": "Posicionamiento clave",
+    "title": "SEOVALT es el único plugin WordPress que hace todo en autopiloto",
+    "subtitle": "El SEO clásico es solo el comienzo. SEOVALT combina SEO, AEO y GEO para resultados reales y visibilidad en todas partes.",
+    "items": [
+      { "title": "Corrección SEO automática", "description": "Escaneo completo + arreglos IA para títulos, metadatos, slugs, H1 y más." },
+      { "title": "Artículos IA que posicionan", "description": "Genera contenido optimizado con un clic y publícalo como borrador o en completo autopiloto." },
+      { "title": "Optimización AEO", "description": "Gana featured snippets, People Also Ask y AI Overviews de Google." },
+      { "title": "Listo para voz", "description": "Respuestas cortas, tono natural y schema Speakable para que Siri y Alexa respondan con tu sitio." },
+      { "title": "Inteligencia GEO", "description": "Mide la probabilidad de que las IA citen tu contenido en ChatGPT, Perplexity y Gemini." },
+      { "title": "Inyección automática de Schema", "description": "Detecta entidades e inyecta JSON-LD correcto para que Google e IA comprendan tu contenido." },
+      { "title": "Descubrimiento de preguntas", "description": "Descubre preguntas reales de Google y YouTube, luego genera artículos desde ellas." },
+      { "title": "Monitoreo PageSpeed", "description": "Sigue LCP, INP y CLS automáticamente y recibe recomendaciones accionables." },
+      { "title": "Informe semanal", "description": "Recibe un reporte claro por email sin trabajo manual." }
+    ]
   },
   "features": {
-    "badge": "Todo lo que necesitas",
-    "title": "Un SEO que trabaja mientras duermes",
-    "subtitle": "Seis herramientas potentes, un solo plugin de WordPress. Sin configuración necesaria.",
+    "badge": "Lo que SEOVALT hace por ti",
+    "title": "SEO + AEO + GEO en piloto automático",
+    "subtitle": "Una suite WordPress que combina contenido IA, correcciones automáticas y visibilidad moderna.",
     "items": {
       "articles": {
-        "title": "Generación de artículos con IA",
-        "description": "Genera automáticamente entradas de blog optimizadas para SEO, adaptadas a tu nicho y estrategia de palabras clave. Completamente en piloto automático."
+        "title": "Artículos IA que realmente rankean",
+        "description": "Genera entradas SEO en un clic: títulos, meta, encabezados, enlaces internos y texto ALT — todo creado por IA."
       },
       "scanner": {
-        "title": "Escáner SEO inteligente",
-        "description": "Auditoría completa del sitio: etiquetas H1, meta descripciones, títulos, calidad de slugs, densidad de palabras clave y mucho más."
+        "title": "Encuentra y corrige cada problema SEO automáticamente",
+        "description": "Auditoría completa en segundos: H1 faltantes, metas vacíos, slugs rotos, alt de imágenes, sitemap. Corrige todo con un clic."
       },
-      "vitals": {
-        "title": "Core Web Vitals",
-        "description": "Monitoriza LCP, INP y CLS a través de Google PageSpeed Insights. Obtén recomendaciones accionables al instante."
+      "geo": {
+        "title": "Sé citado por ChatGPT y Perplexity",
+        "description": "Mide cuánto es probable que las IA citen tu contenido. Genera llms.txt y sigue tu visibilidad en Gemini y ChatGPT." 
       },
-      "images": {
-        "title": "Optimización de imágenes",
-        "description": "Genera en masa textos ALT con IA para cada imagen de tu biblioteca multimedia. Un clic, todo el sitio cubierto."
+      "aeo": {
+        "title": "Gana featured snippets y AI Overviews",
+        "description": "Optimiza cada página para Answer Engine Optimization y gana la posición cero y los boxes PAA." 
       },
-      "competitors": {
-        "title": "Análisis de competidores",
-        "description": "Analiza el posicionamiento de tus competidores y alimenta automáticamente tu pool de palabras clave con términos de alta oportunidad."
+      "voice": {
+        "title": "Optimizado para Siri, Alexa y Google Assistant",
+        "description": "Convierte tu contenido para búsqueda por voz: respuestas cortas, tono natural y schema Speakable." 
       },
-      "meta": {
-        "title": "Meta tags en autopiloto",
-        "description": "Inyecta títulos, descripciones, URLs canónicas y marcado Schema.org — incluso sin Yoast o RankMath."
+      "questions": {
+        "title": "Encuentra lo que la gente busca realmente",
+        "description": "Escribe una palabra clave, obtén 100+ preguntas reales de Google y YouTube, y genera un artículo con un clic." 
+      },
+      "entity": {
+        "title": "Inyección automática de Schema.org",
+        "description": "Detecta organizaciones, productos, personas y lugares e inyecta JSON-LD automáticamente." 
+      },
+      "pagespeed": {
+        "title": "Core Web Vitals en autopiloto",
+        "description": "Monitorea LCP, INP y CLS con Google PageSpeed. Recibe recomendaciones accionables y sigue tu puntuación." 
       }
     }
   },
   "howItWorks": {
-    "badge": "3 pasos",
-    "title": "De la instalación al piloto automático en minutos",
+    "badge": "4 pasos",
+    "title": "Instala, escanea, lanza, deja que funcione.",
     "steps": {
       "install": {
-        "title": "Instala el plugin",
-        "description": "Descarga el .zip de SEOVALT y súbelo a tu sitio WordPress desde la página de Plugins."
+        "title": "Instala en 30 segundos",
+        "description": "Descarga el .zip, súbelo a WordPress. Sin configuración necesaria."
       },
       "license": {
-        "title": "Añade tu clave de licencia",
-        "description": "Pega tu clave de licencia en la configuración del plugin. Tu acceso a la API se activa al instante."
+        "title": "Activa tu licencia",
+        "description": "Pega tu clave. Todas las APIs se gestionan en el servidor — nada que configurar."
+      },
+      "scan": {
+        "title": "Primer escaneo en 60 segundos",
+        "description": "SEOVALT escanea todo tu sitio y muestra cada problema SEO. Corrige todo con un clic."
       },
       "autopilot": {
-        "title": "El SEO funciona en autopiloto",
-        "description": "SEOVALT comienza a escanear, corregir y generar contenido. Recibes un informe SEO semanal por email."
+        "title": "SEO en autopiloto",
+        "description": "Relájate. SEOVALT genera contenido, corrige problemas, monitoriza rendimiento y envía un informe semanal."
       }
     }
   },
@@ -188,6 +216,90 @@
         "role": "Propietaria de e-commerce",
         "company": "NaturalGoods.pl",
         "avatar": "elena"
+      },
+      {
+        "quote": "La función de reconocimiento de entidades de SEOVALT me ayudó a posicionarme para palabras clave de cola larga en las que nunca había pensado. El SEO semántico de mi sitio mejoró dramáticamente.",
+        "name": "David Chen",
+        "role": "Especialista en marketing digital",
+        "company": "GrowthLabs",
+        "avatar": "david"
+      },
+      {
+        "quote": "La optimización para búsqueda por voz fue un cambio radical para mi negocio local. Ahora me posiciono para búsquedas 'cerca de mí' y consultas conversacionales.",
+        "name": "Maria Rodriguez",
+        "role": "Propietaria de negocio local",
+        "company": "Bella Vista Café",
+        "avatar": "maria"
+      },
+      {
+        "quote": "La optimización de PageSpeed sola me ahorró miles en costos de hosting. SEOVALT identificó y corrigió cuellos de botella que ni siquiera sabía que existían.",
+        "name": "Alex Johnson",
+        "role": "Desarrollador WordPress",
+        "company": "DevSolutions",
+        "avatar": "alex"
+      },
+      {
+        "quote": "Los informes de rendimiento semanales son increíblemente detallados. Puedo ver exactamente cómo evoluciona mi estrategia SEO sin monitoreo constante.",
+        "name": "Lisa Thompson",
+        "role": "Especialista SEO",
+        "company": "ContentMasters",
+        "avatar": "lisa"
+      },
+      {
+        "quote": "Las herramientas SEO geográficas de SEOVALT ayudaron a mi negocio multiubicación a dominar los resultados de búsqueda local en 15 ciudades.",
+        "name": "James Wilson",
+        "role": "Propietario de franquicia",
+        "company": "FitLife Gyms",
+        "avatar": "james"
+      },
+      {
+        "quote": "Las funcionalidades AEO me ayudaron a posicionarme en los cuadros de respuesta de Google. Mis fragmentos destacados aumentaron un 300% en solo dos meses.",
+        "name": "Sophie Laurent",
+        "role": "Estratega de contenido",
+        "company": "DigitalFirst",
+        "avatar": "sophie"
+      },
+      {
+        "quote": "Era escéptico sobre las herramientas SEO de IA, pero SEOVALT me demostró lo contrario. Es como tener un equipo SEO completo trabajando 24/7.",
+        "name": "Robert Kim",
+        "role": "Propietario de pequeño negocio",
+        "company": "Kim's Electronics",
+        "avatar": "robert"
+      },
+      {
+        "quote": "La implementación automatizada del marcado schema es perfecta. Rich snippets en todas partes y mi CTR se duplicó.",
+        "name": "Anna Petrov",
+        "role": "Manager de E-commerce",
+        "company": "ShopGlobal",
+        "avatar": "anna"
+      },
+      {
+        "quote": "La función de análisis competitivo de SEOVALT me da insights que no puedo conseguir en ningún otro lugar. Mi estrategia de palabras clave es ahora imbatible.",
+        "name": "Michael Brown",
+        "role": "Consultor SEO",
+        "company": "RankBoosters",
+        "avatar": "michael"
+      },
+      {
+        "quote": "Los enlaces internos automatizados de SEOVALT han transformado la arquitectura de mi sitio. La eficiencia de mi presupuesto de rastreo aumentó un 40%.",
+        "name": "Carlos Mendoza",
+        "role": "Manager SEO",
+        "company": "TechCorp",
+        "avatar": "carlos"
+      },
+      {
+        "quote": "Las funcionalidades de optimización SEO móvil son increíbles. Mis rankings de búsqueda móvil mejoraron dramáticamente después de implementar las recomendaciones de SEOVALT.",
+        "name": "Emma Davis",
+        "role": "Especialista en marketing móvil",
+        "company": "MobileFirst",
+        "avatar": "emma"
+      },
+      {
+        "quote": "SEOVALT detectó y corrigió problemas de contenido duplicado en mi sitio de 50+ páginas en minutos. Ni siquiera sabía que existían.",
+        "name": "Thomas Wright",
+        "role": "Manager de contenido",
+        "company": "ContentHub",
+        "avatar": "thomas"
       }
     ]
   },
@@ -238,9 +350,9 @@
     ]
   },
   "cta": {
-    "title": "Deja de corregir el SEO manualmente.",
-    "titleHighlight": "SEOVALT se encarga.",
-    "subtitle": "Únete a más de 1.000 sitios WordPress con SEO en piloto automático. Empieza gratis en menos de 2 minutos.",
+    "title": "Deja de optimizar para el buscador de ayer.",
+    "titleHighlight": "Empieza a posicionarte en todas partes.",
+    "subtitle": "Google. ChatGPT. Perplexity. Alexa. SEOVALT te hace visible en todos.",
     "button": "Empezar Gratis Hoy",
     "buttonSecondary": "Ver precios"
   },

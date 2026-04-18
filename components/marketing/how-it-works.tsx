@@ -3,13 +3,14 @@
 import { useTranslations } from "next-intl";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Download, Key, Rocket } from "lucide-react";
+import { Download, Key, Rocket, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const STEPS = [
   { key: "install",   icon: Download, color: "emerald" },
   { key: "license",   icon: Key,      color: "cyan" },
-  { key: "autopilot", icon: Rocket,   color: "violet" },
+  { key: "scan",      icon: CheckCircle2, color: "violet" },
+  { key: "autopilot", icon: Rocket,   color: "emerald" },
 ];
 
 export function HowItWorks() {
@@ -39,14 +40,7 @@ export function HowItWorks() {
         </motion.div>
 
         <div className="relative">
-          {/* Connecting line */}
-          <div
-            className="absolute top-10 left-10 right-10 h-px hidden md:block pointer-events-none"
-            style={{ background: "linear-gradient(90deg, var(--emerald) 0%, var(--cyan) 50%, var(--violet) 100%)", opacity: 0.3 }}
-            aria-hidden
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {STEPS.map(({ key, icon: Icon, color }, i) => (
               <motion.div
                 key={key}

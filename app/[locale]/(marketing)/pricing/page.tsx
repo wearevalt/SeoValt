@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { Pricing } from "@/components/marketing/pricing";
-import { FAQ } from "@/components/marketing/faq";
+import { FAQPricing } from "@/components/marketing/faq-pricing";
 import { FinalCTA } from "@/components/marketing/final-cta";
 import { GradientOrbs } from "@/components/shared/gradient-orbs";
 
@@ -18,7 +18,7 @@ export default function PricingPage() {
     <div className="relative pt-24">
       <GradientOrbs />
       <Pricing />
-      <FAQ />
+      <FAQPricing />
       <FinalCTA />
     </div>
   );
