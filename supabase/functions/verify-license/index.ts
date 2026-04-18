@@ -49,6 +49,13 @@ serve(async (req) => {
       );
     }
 
+    if (license.expires_at && new Date(license.expires_at).getTime() < Date.now()) {
+      return new Response(
+        JSON.stringify({ valid: false, error: "License has expired" }),
+        { status: 403, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
+
     // If site_url is provided and license already has one, verify they match
     if (site_url && license.site_url && license.site_url !== site_url) {
       return new Response(

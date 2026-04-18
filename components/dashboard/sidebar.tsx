@@ -10,6 +10,7 @@ import {
   BarChart3,
   CreditCard,
   Settings,
+  Shield,
   BookOpen,
   ChevronLeft,
   ChevronRight,
@@ -58,6 +59,7 @@ export function Sidebar() {
   ];
 
   const secondaryNavItems = [
+    { icon: Shield,          label: "Admin",       href: "/admin/licenses" },
     { icon: Settings,        label: t("settings"),  href: "/dashboard/settings" },
     { icon: BookOpen,        label: t("docs"),       href: "/docs", external: true },
   ];
